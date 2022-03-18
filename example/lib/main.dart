@@ -1,60 +1,113 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:trust_wallet_core_lib/trust_wallet_core_lib.dart';
+import 'package:trust_wallet_core_lib_example/bitcoin_address_example.dart';
+import 'package:trust_wallet_core_lib_example/bitcoin_transaction_example.dart';
+import 'package:trust_wallet_core_lib_example/ethereum_example.dart';
+import 'package:trust_wallet_core_lib_example/private_key_is_valid_example.dart';
+import 'package:trust_wallet_core_lib_example/tron_example.dart';
+
+List<String> logs = [];
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion = await TrustWalletCoreLib.platformVersion ??
-          'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+      home: Example(),
+    );
+  }
+}
+
+class Example extends StatefulWidget {
+  @override
+  _ExampleState createState() => _ExampleState();
+}
+
+class _ExampleState extends State<Example> {
+  late HDWallet wallet;
+
+  @override
+  void initState() {
+    TrustWalletCoreLib.init();
+    super.initState();
+    String mnemonic =
+        "rent craft script crucial item someone dream federal notice page shrug pipe young hover duty"; // 有测试币的 tron地址
+    wallet = HDWallet.createWithMnemonic(mnemonic);
+  }
+
+  Widget _exampleItem({
+    required String name,
+    required WidgetBuilder builder,
+  }) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: builder));
+      },
+      child: Text(name),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('wallet core example app'),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Text(wallet.mnemonic()),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  _exampleItem(
+                    name: 'Ethereum',
+                    builder: (_) {
+                      return EthereumExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'Bitcoin Address',
+                    builder: (_) {
+                      return BitcoinAddressExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'Bitcoin Transaction',
+                    builder: (_) {
+                      return BitcoinTransactionExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'Tron',
+                    builder: (_) {
+                      return TronExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'PrivateKey.isValid(a,b)',
+                    builder: (_) {
+                      return PrivateKeyIsValidExample(wallet);
+                    },
+                  ),
+                ],
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                wallet.delete();
+                wallet = HDWallet();
+                setState(() {});
+              },
+              child: Text("gen"),
+            ),
+          ],
         ),
       ),
     );
