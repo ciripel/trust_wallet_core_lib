@@ -18,6 +18,9 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs project(':trust_wallet_core_lib').file('libs')
+        }
     }
 }
 
@@ -41,10 +44,11 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 23
     }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation(name: 'trustwalletcore', ext: 'aar')
 }
