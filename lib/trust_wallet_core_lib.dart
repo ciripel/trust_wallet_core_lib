@@ -1,12 +1,38 @@
-import 'dart:async';
+library trust_wallet_core_lib;
 
-import 'package:flutter/services.dart';
+import 'dart:ffi';
+import 'dart:io';
+import 'dart:typed_data';
+import 'trust_wallet_core_ffi.dart';
+import 'extensions.dart';
+
+part 'core/mnemonic.dart';
+part 'core/hd_wallet.dart';
+part 'core/private_key.dart';
+part 'core/public_key.dart';
+part 'core/stored_key.dart';
+part 'core/any_address.dart';
+part 'core/base58.dart';
+part 'core/hash.dart';
+part 'core/bitcoin_address.dart';
+part 'core/any_signer.dart';
+part 'core/bitcoin_script.dart';
+part 'core/ripple_x_address.dart';
+part 'core/segwit_address.dart';
+part 'core/solana_address.dart';
+part 'core/hd_version.dart';
+part 'core/groestlcoin_address.dart';
+part 'core/fio_account.dart';
+part 'core/ethereum_abi.dart';
+part 'core/ethereum_abi_value.dart';
+part 'core/coin_type_configuration.dart';
+part 'core/ethereum_abi_function.dart';
+part 'core/hrp.dart';
 
 class TrustWalletCoreLib {
-  static const MethodChannel _channel = MethodChannel('trust_wallet_core_lib');
-
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+  static void init() {
+    walletCoreLib = Platform.isAndroid
+        ? DynamicLibrary.open("libTrustWalletCore.so")
+        : DynamicLibrary.process();
   }
 }
