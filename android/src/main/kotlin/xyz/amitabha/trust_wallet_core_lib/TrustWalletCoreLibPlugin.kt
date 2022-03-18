@@ -1,4 +1,4 @@
-package com.example.trust_wallet_core_lib
+package xyz.amitabha.trust_wallet_core_lib
 
 import androidx.annotation.NonNull
 

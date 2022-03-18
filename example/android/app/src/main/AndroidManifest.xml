@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.trust_wallet_core_lib_example">
+    package="xyz.amitabha.trust_wallet_core_lib_example">
    <application
         android:label="trust_wallet_core_lib_example"
         android:name="${applicationName}"
