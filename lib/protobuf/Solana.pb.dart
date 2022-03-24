@@ -804,7 +804,7 @@ class SigningInput extends $pb.GeneratedMessage {
     5: SigningInput_TransactionType.deactivateStakeTransaction,
     6: SigningInput_TransactionType.withdrawTransaction,
     7: SigningInput_TransactionType.createTokenAccountTransaction,
-    8: SigningInput_TransactionType.tokenTransferTransaction,
+    10: SigningInput_TransactionType.tokenTransferTransaction,
     9: SigningInput_TransactionType.createAndTransferTokenTransaction,
     0: SigningInput_TransactionType.notSet
   };
@@ -817,7 +817,7 @@ class SigningInput extends $pb.GeneratedMessage {
               ? ''
               : 'TW.Solana.Proto'),
       createEmptyInstance: create)
-    ..oo(0, [3, 4, 5, 6, 7, 8, 9])
+    ..oo(0, [3, 4, 5, 6, 7, 10, 9])
     ..a<$core.List<$core.int>>(
         1,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
@@ -860,7 +860,7 @@ class SigningInput extends $pb.GeneratedMessage {
             : 'createTokenAccountTransaction',
         subBuilder: CreateTokenAccount.create)
     ..aOM<TokenTransfer>(
-        8,
+        10,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'tokenTransferTransaction',
@@ -1041,34 +1041,34 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   CreateTokenAccount ensureCreateTokenAccountTransaction() => $_ensure(6);
 
-  @$pb.TagNumber(8)
+  @$pb.TagNumber(10)
   TokenTransfer get tokenTransferTransaction => $_getN(7);
-  @$pb.TagNumber(8)
+  @$pb.TagNumber(10)
   set tokenTransferTransaction(TokenTransfer v) {
-    setField(8, v);
+    setField(10, v);
   }
 
-  @$pb.TagNumber(8)
+  @$pb.TagNumber(10)
   $core.bool hasTokenTransferTransaction() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearTokenTransferTransaction() => clearField(8);
-  @$pb.TagNumber(8)
+  @$pb.TagNumber(10)
+  void clearTokenTransferTransaction() => clearField(10);
+  @$pb.TagNumber(10)
   TokenTransfer ensureTokenTransferTransaction() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  CreateAndTransferToken get createAndTransferTokenTransaction => $_getN(8);
+  CreateAndTransferToken get createAndTransferTokenTransaction => $_getN(10);
   @$pb.TagNumber(9)
   set createAndTransferTokenTransaction(CreateAndTransferToken v) {
     setField(9, v);
   }
 
   @$pb.TagNumber(9)
-  $core.bool hasCreateAndTransferTokenTransaction() => $_has(8);
+  $core.bool hasCreateAndTransferTokenTransaction() => $_has(10);
   @$pb.TagNumber(9)
   void clearCreateAndTransferTokenTransaction() => clearField(9);
   @$pb.TagNumber(9)
   CreateAndTransferToken ensureCreateAndTransferTokenTransaction() =>
-      $_ensure(8);
+      $_ensure(10);
 }
 
 class SigningOutput extends $pb.GeneratedMessage {
