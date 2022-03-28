@@ -4,6 +4,8 @@ A Flutter plugin for trust wallet core. It can access all api list in [https://g
 
 This project was originally copied from [weishirongzhen](https://github.com/weishirongzhen/flutter_trust_wallet_core)
 
+trust_wallet_core_lib is supporting Android and iOS platforms only. (Only Android platform was tested).
+
 # Android
 
 minSdk require >=23
