@@ -1,3 +1,5 @@
+## 0.0.4+2.7.2
+* Fixed iOS support
 ## 0.0.3+2.7.2
 * Fixed Solana Token Transaction
 ## 0.0.2
