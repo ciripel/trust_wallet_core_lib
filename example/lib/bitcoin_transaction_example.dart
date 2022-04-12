@@ -22,7 +22,7 @@ class _BitcoinTransactionExampleState
   @override
   void initState() {
     super.initState();
-    int coin = TWCoinType.TWCoinTypeBitcoinTestnet;
+    int coin = TWCoinType.TWCoinTypeBitcoin;
     final addressBtc = widget.wallet.getAddressForCoin(coin);
     final toAddress = "tb1qks8l9haxjszn9r6yf2dm65ed3w6wmz85r379ms";
     final changeAddress = "mvcJcHN3ZhELVVhncfjARUMtfRELwhGXgL";

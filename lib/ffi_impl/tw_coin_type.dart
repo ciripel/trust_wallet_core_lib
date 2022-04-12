@@ -10,7 +10,6 @@ class TWCoinType {
   static const int TWCoinTypeAion = 425;
   static const int TWCoinTypeBinance = 714;
   static const int TWCoinTypeBitcoin = 0;
-  static const int TWCoinTypeBitcoinTestnet = 1;
   static const int TWCoinTypeBitcoinCash = 145;
   static const int TWCoinTypeBitcoinGold = 156;
   static const int TWCoinTypeCallisto = 820;
@@ -77,6 +76,13 @@ class TWCoinType {
   static const int TWCoinTypeECOChain = 10000553;
   static const int TWCoinTypeAvalancheCChain = 10009000;
   static const int TWCoinTypeXDai = 10000100;
+  static const int TWCoinTypeFantom = 10000250;
+  static const int TWCoinTypeCryptoOrg = 394;
+  static const int TWCoinTypeCelo = 52752;
+  static const int TWCoinTypeRonin = 10002020;
+  static const int TWCoinTypeOsmosis = 10000118;
+  static const int TWCoinTypeECash = 899;
+  static const int TWCoinTypeCronosChain = 10000025;
 
   /// Returns the blockchain for a coin type.
   int TWCoinTypeBlockchain(

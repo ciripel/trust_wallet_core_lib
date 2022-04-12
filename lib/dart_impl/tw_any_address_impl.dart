@@ -35,4 +35,8 @@ class TWAnyAddressImpl extends TWAnyAddress {
     final twString = TWAnyAddress.TWAnyAddressDescription(anyAddress);
     return TWStringImpl.toDartString(twString);
   }
+
+  static void delete(Pointer<Void> address) {
+    TWAnyAddress.TWAnyAddressDelete(address);
+  }
 }

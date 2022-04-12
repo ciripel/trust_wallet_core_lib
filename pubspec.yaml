@@ -1,6 +1,6 @@
 name: trust_wallet_core_lib
 description: A Flutter plugin for trust wallet core.
-version: 0.0.4+2.7.2
+version: 0.0.5+2.7.2
 repository: https://github.com/ciripel/trust_wallet_core_lib
 
 environment:

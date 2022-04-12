@@ -77,6 +77,11 @@ class SigningError extends $pb.ProtobufEnum {
       const $core.bool.fromEnvironment('protobuf.omit_enum_names')
           ? ''
           : 'Error_script_witness_program');
+  static const SigningError Error_invalid_memo = SigningError._(
+      14,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_invalid_memo');
 
   static const $core.List<SigningError> values = <SigningError>[
     OK,
@@ -93,6 +98,7 @@ class SigningError extends $pb.ProtobufEnum {
     Error_script_redeem,
     Error_script_output,
     Error_script_witness_program,
+    Error_invalid_memo,
   ];
 
   static final $core.Map<$core.int, SigningError> _byValue =

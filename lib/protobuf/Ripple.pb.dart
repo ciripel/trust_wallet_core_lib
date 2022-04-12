@@ -10,6 +10,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'Common.pbenum.dart' as $0;
+
 class SigningInput extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       const $core.bool.fromEnvironment('protobuf.omit_message_names')
@@ -264,15 +266,28 @@ class SigningOutput extends $pb.GeneratedMessage {
             ? ''
             : 'encoded',
         $pb.PbFieldType.OY)
+    ..e<$0.SigningError>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'error',
+        $pb.PbFieldType.OE,
+        defaultOrMaker: $0.SigningError.OK,
+        valueOf: $0.SigningError.valueOf,
+        enumValues: $0.SigningError.values)
     ..hasRequiredFields = false;
 
   SigningOutput._() : super();
   factory SigningOutput({
     $core.List<$core.int>? encoded,
+    $0.SigningError? error,
   }) {
     final _result = create();
     if (encoded != null) {
       _result.encoded = encoded;
+    }
+    if (error != null) {
+      _result.error = error;
     }
     return _result;
   }
@@ -314,4 +329,16 @@ class SigningOutput extends $pb.GeneratedMessage {
   $core.bool hasEncoded() => $_has(0);
   @$pb.TagNumber(1)
   void clearEncoded() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.SigningError get error => $_getN(1);
+  @$pb.TagNumber(2)
+  set error($0.SigningError v) {
+    setField(2, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => clearField(2);
 }

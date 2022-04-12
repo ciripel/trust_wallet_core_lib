@@ -22,7 +22,7 @@ class _BitcoinAddressExampleState
   @override
   void initState() {
     super.initState();
-    int coin = TWCoinType.TWCoinTypeBitcoinTestnet;
+    int coin = TWCoinType.TWCoinTypeBitcoin;
     final privakye2 = widget.wallet.getKey(coin, "m/44'/0'/0'/0/0");
     logger.d(hex.encode(privakye2.data()));
     final publicKey2 = privakye2.getPublicKeySecp256k1(true);
