@@ -39,13 +39,13 @@ const Amount$json = const {
   '1': 'Amount',
   '2': const [
     const {'1': 'denom', '3': 1, '4': 1, '5': 9, '10': 'denom'},
-    const {'1': 'amount', '3': 2, '4': 1, '5': 3, '10': 'amount'},
+    const {'1': 'amount', '3': 2, '4': 1, '5': 9, '10': 'amount'},
   ],
 };
 
 /// Descriptor for `Amount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List amountDescriptor = $convert.base64Decode(
-    'CgZBbW91bnQSFAoFZGVub20YASABKAlSBWRlbm9tEhYKBmFtb3VudBgCIAEoA1IGYW1vdW50');
+    'CgZBbW91bnQSFAoFZGVub20YASABKAlSBWRlbm9tEhYKBmFtb3VudBgCIAEoCVIGYW1vdW50');
 @$core.Deprecated('Use feeDescriptor instead')
 const Fee$json = const {
   '1': 'Fee',
@@ -174,6 +174,24 @@ const Message$json = const {
       '9': 0,
       '10': 'wasmTerraExecuteContractSendMessage'
     },
+    const {
+      '1': 'thorchain_send_message',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.TW.Cosmos.Proto.Message.THORChainSend',
+      '9': 0,
+      '10': 'thorchainSendMessage'
+    },
+    const {
+      '1': 'wasm_terra_execute_contract_generic',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.TW.Cosmos.Proto.Message.WasmTerraExecuteContractGeneric',
+      '9': 0,
+      '10': 'wasmTerraExecuteContractGeneric'
+    },
   ],
   '3': const [
     Message_Send$json,
@@ -184,6 +202,8 @@ const Message$json = const {
     Message_WithdrawDelegationReward$json,
     Message_WasmTerraExecuteContractTransfer$json,
     Message_WasmTerraExecuteContractSend$json,
+    Message_THORChainSend$json,
+    Message_WasmTerraExecuteContractGeneric$json,
     Message_RawJSON$json
   ],
   '8': const [
@@ -429,6 +449,53 @@ const Message_WasmTerraExecuteContractSend$json = const {
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
+const Message_THORChainSend$json = const {
+  '1': 'THORChainSend',
+  '2': const [
+    const {'1': 'from_address', '3': 1, '4': 1, '5': 12, '10': 'fromAddress'},
+    const {'1': 'to_address', '3': 2, '4': 1, '5': 12, '10': 'toAddress'},
+    const {
+      '1': 'amounts',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.TW.Cosmos.Proto.Amount',
+      '10': 'amounts'
+    },
+  ],
+};
+
+@$core.Deprecated('Use messageDescriptor instead')
+const Message_WasmTerraExecuteContractGeneric$json = const {
+  '1': 'WasmTerraExecuteContractGeneric',
+  '2': const [
+    const {
+      '1': 'sender_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '10': 'senderAddress'
+    },
+    const {
+      '1': 'contract_address',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'contractAddress'
+    },
+    const {'1': 'execute_msg', '3': 3, '4': 1, '5': 9, '10': 'executeMsg'},
+    const {
+      '1': 'coins',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.TW.Cosmos.Proto.Amount',
+      '10': 'coins'
+    },
+  ],
+};
+
+@$core.Deprecated('Use messageDescriptor instead')
 const Message_RawJSON$json = const {
   '1': 'RawJSON',
   '2': const [
@@ -439,7 +506,7 @@ const Message_RawJSON$json = const {
 
 /// Descriptor for `Message`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List messageDescriptor = $convert.base64Decode(
-    'CgdNZXNzYWdlEk0KEnNlbmRfY29pbnNfbWVzc2FnZRgBIAEoCzIdLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlNlbmRIAFIQc2VuZENvaW5zTWVzc2FnZRJbChd0cmFuc2Zlcl90b2tlbnNfbWVzc2FnZRgCIAEoCzIhLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRyYW5zZmVySABSFXRyYW5zZmVyVG9rZW5zTWVzc2FnZRJICg1zdGFrZV9tZXNzYWdlGAMgASgLMiEuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuRGVsZWdhdGVIAFIMc3Rha2VNZXNzYWdlEk4KD3Vuc3Rha2VfbWVzc2FnZRgEIAEoCzIjLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlVuZGVsZWdhdGVIAFIOdW5zdGFrZU1lc3NhZ2USUwoPcmVzdGFrZV9tZXNzYWdlGAUgASgLMiguVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuQmVnaW5SZWRlbGVnYXRlSABSDnJlc3Rha2VNZXNzYWdlEnYKHXdpdGhkcmF3X3N0YWtlX3Jld2FyZF9tZXNzYWdlGAYgASgLMjEuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuV2l0aGRyYXdEZWxlZ2F0aW9uUmV3YXJkSABSGndpdGhkcmF3U3Rha2VSZXdhcmRNZXNzYWdlEkwKEHJhd19qc29uX21lc3NhZ2UYByABKAsyIC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5SYXdKU09OSABSDnJhd0pzb25NZXNzYWdlEpoBCix3YXNtX3RlcnJhX2V4ZWN1dGVfY29udHJhY3RfdHJhbnNmZXJfbWVzc2FnZRgIIAEoCzI5LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVySABSJ3dhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVyTWVzc2FnZRKOAQood2FzbV90ZXJyYV9leGVjdXRlX2NvbnRyYWN0X3NlbmRfbWVzc2FnZRgJIAEoCzI1LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cmFjdFNlbmRIAFIjd2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0U2VuZE1lc3NhZ2UanAEKBFNlbmQSIQoMZnJvbV9hZGRyZXNzGAEgASgJUgtmcm9tQWRkcmVzcxIdCgp0b19hZGRyZXNzGAIgASgJUgl0b0FkZHJlc3MSMQoHYW1vdW50cxgDIAMoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSB2Ftb3VudHMSHwoLdHlwZV9wcmVmaXgYBCABKAlSCnR5cGVQcmVmaXgaogIKCFRyYW5zZmVyEh8KC3NvdXJjZV9wb3J0GAEgASgJUgpzb3VyY2VQb3J0EiUKDnNvdXJjZV9jaGFubmVsGAIgASgJUg1zb3VyY2VDaGFubmVsEi0KBXRva2VuGAMgASgLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIFdG9rZW4SFgoGc2VuZGVyGAQgASgJUgZzZW5kZXISGgoIcmVjZWl2ZXIYBSABKAlSCHJlY2VpdmVyEj4KDnRpbWVvdXRfaGVpZ2h0GAYgASgLMhcuVFcuQ29zbW9zLlByb3RvLkhlaWdodFINdGltZW91dEhlaWdodBIrChF0aW1lb3V0X3RpbWVzdGFtcBgHIAEoBFIQdGltZW91dFRpbWVzdGFtcBq2AQoIRGVsZWdhdGUSKwoRZGVsZWdhdG9yX2FkZHJlc3MYASABKAlSEGRlbGVnYXRvckFkZHJlc3MSKwoRdmFsaWRhdG9yX2FkZHJlc3MYAiABKAlSEHZhbGlkYXRvckFkZHJlc3MSLwoGYW1vdW50GAMgASgLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIGYW1vdW50Eh8KC3R5cGVfcHJlZml4GAQgASgJUgp0eXBlUHJlZml4GrgBCgpVbmRlbGVnYXRlEisKEWRlbGVnYXRvcl9hZGRyZXNzGAEgASgJUhBkZWxlZ2F0b3JBZGRyZXNzEisKEXZhbGlkYXRvcl9hZGRyZXNzGAIgASgJUhB2YWxpZGF0b3JBZGRyZXNzEi8KBmFtb3VudBgDIAEoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSBmFtb3VudBIfCgt0eXBlX3ByZWZpeBgEIAEoCVIKdHlwZVByZWZpeBr4AQoPQmVnaW5SZWRlbGVnYXRlEisKEWRlbGVnYXRvcl9hZGRyZXNzGAEgASgJUhBkZWxlZ2F0b3JBZGRyZXNzEjIKFXZhbGlkYXRvcl9zcmNfYWRkcmVzcxgCIAEoCVITdmFsaWRhdG9yU3JjQWRkcmVzcxIyChV2YWxpZGF0b3JfZHN0X2FkZHJlc3MYAyABKAlSE3ZhbGlkYXRvckRzdEFkZHJlc3MSLwoGYW1vdW50GAQgASgLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIGYW1vdW50Eh8KC3R5cGVfcHJlZml4GAUgASgJUgp0eXBlUHJlZml4GpUBChhXaXRoZHJhd0RlbGVnYXRpb25SZXdhcmQSKwoRZGVsZWdhdG9yX2FkZHJlc3MYASABKAlSEGRlbGVnYXRvckFkZHJlc3MSKwoRdmFsaWRhdG9yX2FkZHJlc3MYAiABKAlSEHZhbGlkYXRvckFkZHJlc3MSHwoLdHlwZV9wcmVmaXgYAyABKAlSCnR5cGVQcmVmaXgauQEKIFdhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVyEiUKDnNlbmRlcl9hZGRyZXNzGAEgASgJUg1zZW5kZXJBZGRyZXNzEikKEGNvbnRyYWN0X2FkZHJlc3MYAiABKAlSD2NvbnRyYWN0QWRkcmVzcxIWCgZhbW91bnQYAyABKAxSBmFtb3VudBIrChFyZWNpcGllbnRfYWRkcmVzcxgEIAEoCVIQcmVjaXBpZW50QWRkcmVzcxrsAQocV2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0U2VuZBIlCg5zZW5kZXJfYWRkcmVzcxgBIAEoCVINc2VuZGVyQWRkcmVzcxIpChBjb250cmFjdF9hZGRyZXNzGAIgASgJUg9jb250cmFjdEFkZHJlc3MSFgoGYW1vdW50GAMgASgMUgZhbW91bnQSPAoacmVjaXBpZW50X2NvbnRyYWN0X2FkZHJlc3MYBCABKAlSGHJlY2lwaWVudENvbnRyYWN0QWRkcmVzcxIQCgNtc2cYBSABKAlSA21zZxISCgRjb2luGAYgAygJUgRjb2luGjMKB1Jhd0pTT04SEgoEdHlwZRgBIAEoCVIEdHlwZRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWVCDwoNbWVzc2FnZV9vbmVvZg==');
+    'CgdNZXNzYWdlEk0KEnNlbmRfY29pbnNfbWVzc2FnZRgBIAEoCzIdLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlNlbmRIAFIQc2VuZENvaW5zTWVzc2FnZRJbChd0cmFuc2Zlcl90b2tlbnNfbWVzc2FnZRgCIAEoCzIhLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRyYW5zZmVySABSFXRyYW5zZmVyVG9rZW5zTWVzc2FnZRJICg1zdGFrZV9tZXNzYWdlGAMgASgLMiEuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuRGVsZWdhdGVIAFIMc3Rha2VNZXNzYWdlEk4KD3Vuc3Rha2VfbWVzc2FnZRgEIAEoCzIjLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlVuZGVsZWdhdGVIAFIOdW5zdGFrZU1lc3NhZ2USUwoPcmVzdGFrZV9tZXNzYWdlGAUgASgLMiguVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuQmVnaW5SZWRlbGVnYXRlSABSDnJlc3Rha2VNZXNzYWdlEnYKHXdpdGhkcmF3X3N0YWtlX3Jld2FyZF9tZXNzYWdlGAYgASgLMjEuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuV2l0aGRyYXdEZWxlZ2F0aW9uUmV3YXJkSABSGndpdGhkcmF3U3Rha2VSZXdhcmRNZXNzYWdlEkwKEHJhd19qc29uX21lc3NhZ2UYByABKAsyIC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5SYXdKU09OSABSDnJhd0pzb25NZXNzYWdlEpoBCix3YXNtX3RlcnJhX2V4ZWN1dGVfY29udHJhY3RfdHJhbnNmZXJfbWVzc2FnZRgIIAEoCzI5LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVySABSJ3dhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVyTWVzc2FnZRKOAQood2FzbV90ZXJyYV9leGVjdXRlX2NvbnRyYWN0X3NlbmRfbWVzc2FnZRgJIAEoCzI1LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cmFjdFNlbmRIAFIjd2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0U2VuZE1lc3NhZ2USXgoWdGhvcmNoYWluX3NlbmRfbWVzc2FnZRgKIAEoCzImLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRIT1JDaGFpblNlbmRIAFIUdGhvcmNoYWluU2VuZE1lc3NhZ2USiAEKI3dhc21fdGVycmFfZXhlY3V0ZV9jb250cmFjdF9nZW5lcmljGAsgASgLMjguVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuV2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0R2VuZXJpY0gAUh93YXNtVGVycmFFeGVjdXRlQ29udHJhY3RHZW5lcmljGpwBCgRTZW5kEiEKDGZyb21fYWRkcmVzcxgBIAEoCVILZnJvbUFkZHJlc3MSHQoKdG9fYWRkcmVzcxgCIAEoCVIJdG9BZGRyZXNzEjEKB2Ftb3VudHMYAyADKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50UgdhbW91bnRzEh8KC3R5cGVfcHJlZml4GAQgASgJUgp0eXBlUHJlZml4GqICCghUcmFuc2ZlchIfCgtzb3VyY2VfcG9ydBgBIAEoCVIKc291cmNlUG9ydBIlCg5zb3VyY2VfY2hhbm5lbBgCIAEoCVINc291cmNlQ2hhbm5lbBItCgV0b2tlbhgDIAEoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSBXRva2VuEhYKBnNlbmRlchgEIAEoCVIGc2VuZGVyEhoKCHJlY2VpdmVyGAUgASgJUghyZWNlaXZlchI+Cg50aW1lb3V0X2hlaWdodBgGIAEoCzIXLlRXLkNvc21vcy5Qcm90by5IZWlnaHRSDXRpbWVvdXRIZWlnaHQSKwoRdGltZW91dF90aW1lc3RhbXAYByABKARSEHRpbWVvdXRUaW1lc3RhbXAatgEKCERlbGVnYXRlEisKEWRlbGVnYXRvcl9hZGRyZXNzGAEgASgJUhBkZWxlZ2F0b3JBZGRyZXNzEisKEXZhbGlkYXRvcl9hZGRyZXNzGAIgASgJUhB2YWxpZGF0b3JBZGRyZXNzEi8KBmFtb3VudBgDIAEoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSBmFtb3VudBIfCgt0eXBlX3ByZWZpeBgEIAEoCVIKdHlwZVByZWZpeBq4AQoKVW5kZWxlZ2F0ZRIrChFkZWxlZ2F0b3JfYWRkcmVzcxgBIAEoCVIQZGVsZWdhdG9yQWRkcmVzcxIrChF2YWxpZGF0b3JfYWRkcmVzcxgCIAEoCVIQdmFsaWRhdG9yQWRkcmVzcxIvCgZhbW91bnQYAyABKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50UgZhbW91bnQSHwoLdHlwZV9wcmVmaXgYBCABKAlSCnR5cGVQcmVmaXga+AEKD0JlZ2luUmVkZWxlZ2F0ZRIrChFkZWxlZ2F0b3JfYWRkcmVzcxgBIAEoCVIQZGVsZWdhdG9yQWRkcmVzcxIyChV2YWxpZGF0b3Jfc3JjX2FkZHJlc3MYAiABKAlSE3ZhbGlkYXRvclNyY0FkZHJlc3MSMgoVdmFsaWRhdG9yX2RzdF9hZGRyZXNzGAMgASgJUhN2YWxpZGF0b3JEc3RBZGRyZXNzEi8KBmFtb3VudBgEIAEoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSBmFtb3VudBIfCgt0eXBlX3ByZWZpeBgFIAEoCVIKdHlwZVByZWZpeBqVAQoYV2l0aGRyYXdEZWxlZ2F0aW9uUmV3YXJkEisKEWRlbGVnYXRvcl9hZGRyZXNzGAEgASgJUhBkZWxlZ2F0b3JBZGRyZXNzEisKEXZhbGlkYXRvcl9hZGRyZXNzGAIgASgJUhB2YWxpZGF0b3JBZGRyZXNzEh8KC3R5cGVfcHJlZml4GAMgASgJUgp0eXBlUHJlZml4GrkBCiBXYXNtVGVycmFFeGVjdXRlQ29udHJhY3RUcmFuc2ZlchIlCg5zZW5kZXJfYWRkcmVzcxgBIAEoCVINc2VuZGVyQWRkcmVzcxIpChBjb250cmFjdF9hZGRyZXNzGAIgASgJUg9jb250cmFjdEFkZHJlc3MSFgoGYW1vdW50GAMgASgMUgZhbW91bnQSKwoRcmVjaXBpZW50X2FkZHJlc3MYBCABKAlSEHJlY2lwaWVudEFkZHJlc3Ma7AEKHFdhc21UZXJyYUV4ZWN1dGVDb250cmFjdFNlbmQSJQoOc2VuZGVyX2FkZHJlc3MYASABKAlSDXNlbmRlckFkZHJlc3MSKQoQY29udHJhY3RfYWRkcmVzcxgCIAEoCVIPY29udHJhY3RBZGRyZXNzEhYKBmFtb3VudBgDIAEoDFIGYW1vdW50EjwKGnJlY2lwaWVudF9jb250cmFjdF9hZGRyZXNzGAQgASgJUhhyZWNpcGllbnRDb250cmFjdEFkZHJlc3MSEAoDbXNnGAUgASgJUgNtc2cSEgoEY29pbhgGIAMoCVIEY29pbhqEAQoNVEhPUkNoYWluU2VuZBIhCgxmcm9tX2FkZHJlc3MYASABKAxSC2Zyb21BZGRyZXNzEh0KCnRvX2FkZHJlc3MYAiABKAxSCXRvQWRkcmVzcxIxCgdhbW91bnRzGAMgAygLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIHYW1vdW50cxrDAQofV2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0R2VuZXJpYxIlCg5zZW5kZXJfYWRkcmVzcxgBIAEoCVINc2VuZGVyQWRkcmVzcxIpChBjb250cmFjdF9hZGRyZXNzGAIgASgJUg9jb250cmFjdEFkZHJlc3MSHwoLZXhlY3V0ZV9tc2cYAyABKAlSCmV4ZWN1dGVNc2cSLQoFY29pbnMYBSADKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50UgVjb2lucxozCgdSYXdKU09OEhIKBHR5cGUYASABKAlSBHR5cGUSFAoFdmFsdWUYAiABKAlSBXZhbHVlQg8KDW1lc3NhZ2Vfb25lb2Y=');
 @$core.Deprecated('Use signingInputDescriptor instead')
 const SigningInput$json = const {
   '1': 'SigningInput',

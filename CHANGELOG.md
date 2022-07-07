@@ -1,3 +1,5 @@
+## 0.0.6+2.9.6
+* Update API - synced with 2.9.6
 ## 0.0.5+2.7.2
 * Update API - synced with 2.7.2
 ## 0.0.4+2.7.2

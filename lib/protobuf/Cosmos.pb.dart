@@ -29,7 +29,7 @@ class Amount extends $pb.GeneratedMessage {
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'denom')
-    ..aInt64(
+    ..aOS(
         2,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
@@ -39,7 +39,7 @@ class Amount extends $pb.GeneratedMessage {
   Amount._() : super();
   factory Amount({
     $core.String? denom,
-    $fixnum.Int64? amount,
+    $core.String? amount,
   }) {
     final _result = create();
     if (denom != null) {
@@ -89,10 +89,10 @@ class Amount extends $pb.GeneratedMessage {
   void clearDenom() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get amount => $_getI64(1);
+  $core.String get amount => $_getSZ(1);
   @$pb.TagNumber(2)
-  set amount($fixnum.Int64 v) {
-    $_setInt64(1, v);
+  set amount($core.String v) {
+    $_setString(1, v);
   }
 
   @$pb.TagNumber(2)
@@ -1442,6 +1442,241 @@ class Message_WasmTerraExecuteContractSend extends $pb.GeneratedMessage {
   $core.List<$core.String> get coin => $_getList(5);
 }
 
+class Message_THORChainSend extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'Message.THORChainSend',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.Cosmos.Proto'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'fromAddress',
+        $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'toAddress',
+        $pb.PbFieldType.OY)
+    ..pc<Amount>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'amounts',
+        $pb.PbFieldType.PM,
+        subBuilder: Amount.create)
+    ..hasRequiredFields = false;
+
+  Message_THORChainSend._() : super();
+  factory Message_THORChainSend({
+    $core.List<$core.int>? fromAddress,
+    $core.List<$core.int>? toAddress,
+    $core.Iterable<Amount>? amounts,
+  }) {
+    final _result = create();
+    if (fromAddress != null) {
+      _result.fromAddress = fromAddress;
+    }
+    if (toAddress != null) {
+      _result.toAddress = toAddress;
+    }
+    if (amounts != null) {
+      _result.amounts.addAll(amounts);
+    }
+    return _result;
+  }
+  factory Message_THORChainSend.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Message_THORChainSend.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  Message_THORChainSend clone() =>
+      Message_THORChainSend()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Message_THORChainSend copyWith(
+          void Function(Message_THORChainSend) updates) =>
+      super.copyWith((message) => updates(message as Message_THORChainSend))
+          as Message_THORChainSend; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_THORChainSend create() => Message_THORChainSend._();
+  Message_THORChainSend createEmptyInstance() => create();
+  static $pb.PbList<Message_THORChainSend> createRepeated() =>
+      $pb.PbList<Message_THORChainSend>();
+  @$core.pragma('dart2js:noInline')
+  static Message_THORChainSend getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Message_THORChainSend>(create);
+  static Message_THORChainSend? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get fromAddress => $_getN(0);
+  @$pb.TagNumber(1)
+  set fromAddress($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasFromAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFromAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get toAddress => $_getN(1);
+  @$pb.TagNumber(2)
+  set toAddress($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasToAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<Amount> get amounts => $_getList(2);
+}
+
+class Message_WasmTerraExecuteContractGeneric extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'Message.WasmTerraExecuteContractGeneric',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.Cosmos.Proto'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'senderAddress')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'contractAddress')
+    ..aOS(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'executeMsg')
+    ..pc<Amount>(
+        5,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'coins',
+        $pb.PbFieldType.PM,
+        subBuilder: Amount.create)
+    ..hasRequiredFields = false;
+
+  Message_WasmTerraExecuteContractGeneric._() : super();
+  factory Message_WasmTerraExecuteContractGeneric({
+    $core.String? senderAddress,
+    $core.String? contractAddress,
+    $core.String? executeMsg,
+    $core.Iterable<Amount>? coins,
+  }) {
+    final _result = create();
+    if (senderAddress != null) {
+      _result.senderAddress = senderAddress;
+    }
+    if (contractAddress != null) {
+      _result.contractAddress = contractAddress;
+    }
+    if (executeMsg != null) {
+      _result.executeMsg = executeMsg;
+    }
+    if (coins != null) {
+      _result.coins.addAll(coins);
+    }
+    return _result;
+  }
+  factory Message_WasmTerraExecuteContractGeneric.fromBuffer(
+          $core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Message_WasmTerraExecuteContractGeneric.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  Message_WasmTerraExecuteContractGeneric clone() =>
+      Message_WasmTerraExecuteContractGeneric()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Message_WasmTerraExecuteContractGeneric copyWith(
+          void Function(Message_WasmTerraExecuteContractGeneric) updates) =>
+      super.copyWith((message) =>
+              updates(message as Message_WasmTerraExecuteContractGeneric))
+          as Message_WasmTerraExecuteContractGeneric; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmTerraExecuteContractGeneric create() =>
+      Message_WasmTerraExecuteContractGeneric._();
+  Message_WasmTerraExecuteContractGeneric createEmptyInstance() => create();
+  static $pb.PbList<Message_WasmTerraExecuteContractGeneric> createRepeated() =>
+      $pb.PbList<Message_WasmTerraExecuteContractGeneric>();
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmTerraExecuteContractGeneric getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          Message_WasmTerraExecuteContractGeneric>(create);
+  static Message_WasmTerraExecuteContractGeneric? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get senderAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set senderAddress($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasSenderAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSenderAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contractAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contractAddress($core.String v) {
+    $_setString(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasContractAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContractAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get executeMsg => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set executeMsg($core.String v) {
+    $_setString(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasExecuteMsg() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExecuteMsg() => clearField(3);
+
+  @$pb.TagNumber(5)
+  $core.List<Amount> get coins => $_getList(3);
+}
+
 class Message_RawJSON extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       const $core.bool.fromEnvironment('protobuf.omit_message_names')
@@ -1540,6 +1775,8 @@ enum Message_MessageOneof {
   rawJsonMessage,
   wasmTerraExecuteContractTransferMessage,
   wasmTerraExecuteContractSendMessage,
+  thorchainSendMessage,
+  wasmTerraExecuteContractGeneric,
   notSet
 }
 
@@ -1555,6 +1792,8 @@ class Message extends $pb.GeneratedMessage {
     7: Message_MessageOneof.rawJsonMessage,
     8: Message_MessageOneof.wasmTerraExecuteContractTransferMessage,
     9: Message_MessageOneof.wasmTerraExecuteContractSendMessage,
+    10: Message_MessageOneof.thorchainSendMessage,
+    11: Message_MessageOneof.wasmTerraExecuteContractGeneric,
     0: Message_MessageOneof.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
@@ -1566,7 +1805,7 @@ class Message extends $pb.GeneratedMessage {
               ? ''
               : 'TW.Cosmos.Proto'),
       createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
     ..aOM<Message_Send>(
         1,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
@@ -1621,6 +1860,18 @@ class Message extends $pb.GeneratedMessage {
             ? ''
             : 'wasmTerraExecuteContractSendMessage',
         subBuilder: Message_WasmTerraExecuteContractSend.create)
+    ..aOM<Message_THORChainSend>(
+        10,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'thorchainSendMessage',
+        subBuilder: Message_THORChainSend.create)
+    ..aOM<Message_WasmTerraExecuteContractGeneric>(
+        11,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'wasmTerraExecuteContractGeneric',
+        subBuilder: Message_WasmTerraExecuteContractGeneric.create)
     ..hasRequiredFields = false;
 
   Message._() : super();
@@ -1635,6 +1886,8 @@ class Message extends $pb.GeneratedMessage {
     Message_WasmTerraExecuteContractTransfer?
         wasmTerraExecuteContractTransferMessage,
     Message_WasmTerraExecuteContractSend? wasmTerraExecuteContractSendMessage,
+    Message_THORChainSend? thorchainSendMessage,
+    Message_WasmTerraExecuteContractGeneric? wasmTerraExecuteContractGeneric,
   }) {
     final _result = create();
     if (sendCoinsMessage != null) {
@@ -1665,6 +1918,12 @@ class Message extends $pb.GeneratedMessage {
     if (wasmTerraExecuteContractSendMessage != null) {
       _result.wasmTerraExecuteContractSendMessage =
           wasmTerraExecuteContractSendMessage;
+    }
+    if (thorchainSendMessage != null) {
+      _result.thorchainSendMessage = thorchainSendMessage;
+    }
+    if (wasmTerraExecuteContractGeneric != null) {
+      _result.wasmTerraExecuteContractGeneric = wasmTerraExecuteContractGeneric;
     }
     return _result;
   }
@@ -1830,6 +2089,37 @@ class Message extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   Message_WasmTerraExecuteContractSend
       ensureWasmTerraExecuteContractSendMessage() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  Message_THORChainSend get thorchainSendMessage => $_getN(9);
+  @$pb.TagNumber(10)
+  set thorchainSendMessage(Message_THORChainSend v) {
+    setField(10, v);
+  }
+
+  @$pb.TagNumber(10)
+  $core.bool hasThorchainSendMessage() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearThorchainSendMessage() => clearField(10);
+  @$pb.TagNumber(10)
+  Message_THORChainSend ensureThorchainSendMessage() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  Message_WasmTerraExecuteContractGeneric get wasmTerraExecuteContractGeneric =>
+      $_getN(10);
+  @$pb.TagNumber(11)
+  set wasmTerraExecuteContractGeneric(
+      Message_WasmTerraExecuteContractGeneric v) {
+    setField(11, v);
+  }
+
+  @$pb.TagNumber(11)
+  $core.bool hasWasmTerraExecuteContractGeneric() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearWasmTerraExecuteContractGeneric() => clearField(11);
+  @$pb.TagNumber(11)
+  Message_WasmTerraExecuteContractGeneric
+      ensureWasmTerraExecuteContractGeneric() => $_ensure(10);
 }
 
 class SigningInput extends $pb.GeneratedMessage {

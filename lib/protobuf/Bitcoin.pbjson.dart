@@ -241,9 +241,55 @@ const SigningOutput$json = const {
       '6': '.TW.Common.Proto.SigningError',
       '10': 'error'
     },
+    const {'1': 'error_message', '3': 5, '4': 1, '5': 9, '10': 'errorMessage'},
   ],
 };
 
 /// Descriptor for `SigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode(
-    'Cg1TaWduaW5nT3V0cHV0Ej8KC3RyYW5zYWN0aW9uGAEgASgLMh0uVFcuQml0Y29pbi5Qcm90by5UcmFuc2FjdGlvblILdHJhbnNhY3Rpb24SGAoHZW5jb2RlZBgCIAEoDFIHZW5jb2RlZBIlCg50cmFuc2FjdGlvbl9pZBgDIAEoCVINdHJhbnNhY3Rpb25JZBIzCgVlcnJvchgEIAEoDjIdLlRXLkNvbW1vbi5Qcm90by5TaWduaW5nRXJyb3JSBWVycm9y');
+    'Cg1TaWduaW5nT3V0cHV0Ej8KC3RyYW5zYWN0aW9uGAEgASgLMh0uVFcuQml0Y29pbi5Qcm90by5UcmFuc2FjdGlvblILdHJhbnNhY3Rpb24SGAoHZW5jb2RlZBgCIAEoDFIHZW5jb2RlZBIlCg50cmFuc2FjdGlvbl9pZBgDIAEoCVINdHJhbnNhY3Rpb25JZBIzCgVlcnJvchgEIAEoDjIdLlRXLkNvbW1vbi5Qcm90by5TaWduaW5nRXJyb3JSBWVycm9yEiMKDWVycm9yX21lc3NhZ2UYBSABKAlSDGVycm9yTWVzc2FnZQ==');
+@$core.Deprecated('Use hashPublicKeyDescriptor instead')
+const HashPublicKey$json = const {
+  '1': 'HashPublicKey',
+  '2': const [
+    const {'1': 'data_hash', '3': 1, '4': 1, '5': 12, '10': 'dataHash'},
+    const {
+      '1': 'public_key_hash',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '10': 'publicKeyHash'
+    },
+  ],
+};
+
+/// Descriptor for `HashPublicKey`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hashPublicKeyDescriptor = $convert.base64Decode(
+    'Cg1IYXNoUHVibGljS2V5EhsKCWRhdGFfaGFzaBgBIAEoDFIIZGF0YUhhc2gSJgoPcHVibGljX2tleV9oYXNoGAIgASgMUg1wdWJsaWNLZXlIYXNo');
+@$core.Deprecated('Use preSigningOutputDescriptor instead')
+const PreSigningOutput$json = const {
+  '1': 'PreSigningOutput',
+  '2': const [
+    const {
+      '1': 'hash_public_keys',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.TW.Bitcoin.Proto.HashPublicKey',
+      '10': 'hashPublicKeys'
+    },
+    const {
+      '1': 'error',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.TW.Common.Proto.SigningError',
+      '10': 'error'
+    },
+    const {'1': 'error_message', '3': 3, '4': 1, '5': 9, '10': 'errorMessage'},
+  ],
+};
+
+/// Descriptor for `PreSigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List preSigningOutputDescriptor = $convert.base64Decode(
+    'ChBQcmVTaWduaW5nT3V0cHV0EkkKEGhhc2hfcHVibGljX2tleXMYASADKAsyHy5UVy5CaXRjb2luLlByb3RvLkhhc2hQdWJsaWNLZXlSDmhhc2hQdWJsaWNLZXlzEjMKBWVycm9yGAIgASgOMh0uVFcuQ29tbW9uLlByb3RvLlNpZ25pbmdFcnJvclIFZXJyb3ISIwoNZXJyb3JfbWVzc2FnZRgDIAEoCVIMZXJyb3JNZXNzYWdl');

@@ -209,9 +209,18 @@ const SigningOutput$json = const {
     const {'1': 'r', '3': 3, '4': 1, '5': 12, '10': 'r'},
     const {'1': 's', '3': 4, '4': 1, '5': 12, '10': 's'},
     const {'1': 'data', '3': 5, '4': 1, '5': 12, '10': 'data'},
+    const {
+      '1': 'error',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.TW.Common.Proto.SigningError',
+      '10': 'error'
+    },
+    const {'1': 'error_message', '3': 7, '4': 1, '5': 9, '10': 'errorMessage'},
   ],
 };
 
 /// Descriptor for `SigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode(
-    'Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAxSB2VuY29kZWQSDAoBdhgCIAEoDFIBdhIMCgFyGAMgASgMUgFyEgwKAXMYBCABKAxSAXMSEgoEZGF0YRgFIAEoDFIEZGF0YQ==');
+    'Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAxSB2VuY29kZWQSDAoBdhgCIAEoDFIBdhIMCgFyGAMgASgMUgFyEgwKAXMYBCABKAxSAXMSEgoEZGF0YRgFIAEoDFIEZGF0YRIzCgVlcnJvchgGIAEoDjIdLlRXLkNvbW1vbi5Qcm90by5TaWduaW5nRXJyb3JSBWVycm9yEiMKDWVycm9yX21lc3NhZ2UYByABKAlSDGVycm9yTWVzc2FnZQ==');

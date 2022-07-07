@@ -482,12 +482,11 @@ class FunctionCall extends $pb.GeneratedMessage {
               ? ''
               : 'TW.NEAR.Proto'),
       createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(
+    ..aOS(
         1,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
-            : 'methodName',
-        $pb.PbFieldType.OY)
+            : 'methodName')
     ..a<$core.List<$core.int>>(
         2,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
@@ -511,7 +510,7 @@ class FunctionCall extends $pb.GeneratedMessage {
 
   FunctionCall._() : super();
   factory FunctionCall({
-    $core.List<$core.int>? methodName,
+    $core.String? methodName,
     $core.List<$core.int>? args,
     $fixnum.Int64? gas,
     $core.List<$core.int>? deposit,
@@ -559,10 +558,10 @@ class FunctionCall extends $pb.GeneratedMessage {
   static FunctionCall? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.int> get methodName => $_getN(0);
+  $core.String get methodName => $_getSZ(0);
   @$pb.TagNumber(1)
-  set methodName($core.List<$core.int> v) {
-    $_setBytes(0, v);
+  set methodName($core.String v) {
+    $_setString(0, v);
   }
 
   @$pb.TagNumber(1)
@@ -1440,15 +1439,25 @@ class SigningOutput extends $pb.GeneratedMessage {
             ? ''
             : 'signedTransaction',
         $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'hash',
+        $pb.PbFieldType.OY)
     ..hasRequiredFields = false;
 
   SigningOutput._() : super();
   factory SigningOutput({
     $core.List<$core.int>? signedTransaction,
+    $core.List<$core.int>? hash,
   }) {
     final _result = create();
     if (signedTransaction != null) {
       _result.signedTransaction = signedTransaction;
+    }
+    if (hash != null) {
+      _result.hash = hash;
     }
     return _result;
   }
@@ -1490,4 +1499,16 @@ class SigningOutput extends $pb.GeneratedMessage {
   $core.bool hasSignedTransaction() => $_has(0);
   @$pb.TagNumber(1)
   void clearSignedTransaction() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get hash => $_getN(1);
+  @$pb.TagNumber(2)
+  set hash($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasHash() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHash() => clearField(2);
 }

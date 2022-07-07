@@ -97,7 +97,7 @@ final $typed_data.Uint8List deployContractDescriptor =
 const FunctionCall$json = const {
   '1': 'FunctionCall',
   '2': const [
-    const {'1': 'method_name', '3': 1, '4': 1, '5': 12, '10': 'methodName'},
+    const {'1': 'method_name', '3': 1, '4': 1, '5': 9, '10': 'methodName'},
     const {'1': 'args', '3': 2, '4': 1, '5': 12, '10': 'args'},
     const {'1': 'gas', '3': 3, '4': 1, '5': 4, '10': 'gas'},
     const {'1': 'deposit', '3': 4, '4': 1, '5': 12, '10': 'deposit'},
@@ -106,7 +106,7 @@ const FunctionCall$json = const {
 
 /// Descriptor for `FunctionCall`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List functionCallDescriptor = $convert.base64Decode(
-    'CgxGdW5jdGlvbkNhbGwSHwoLbWV0aG9kX25hbWUYASABKAxSCm1ldGhvZE5hbWUSEgoEYXJncxgCIAEoDFIEYXJncxIQCgNnYXMYAyABKARSA2dhcxIYCgdkZXBvc2l0GAQgASgMUgdkZXBvc2l0');
+    'CgxGdW5jdGlvbkNhbGwSHwoLbWV0aG9kX25hbWUYASABKAlSCm1ldGhvZE5hbWUSEgoEYXJncxgCIAEoDFIEYXJncxIQCgNnYXMYAyABKARSA2dhcxIYCgdkZXBvc2l0GAQgASgMUgdkZXBvc2l0');
 @$core.Deprecated('Use transferDescriptor instead')
 const Transfer$json = const {
   '1': 'Transfer',
@@ -310,9 +310,10 @@ const SigningOutput$json = const {
       '5': 12,
       '10': 'signedTransaction'
     },
+    const {'1': 'hash', '3': 2, '4': 1, '5': 12, '10': 'hash'},
   ],
 };
 
 /// Descriptor for `SigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode(
-    'Cg1TaWduaW5nT3V0cHV0Ei0KEnNpZ25lZF90cmFuc2FjdGlvbhgBIAEoDFIRc2lnbmVkVHJhbnNhY3Rpb24=');
+    'Cg1TaWduaW5nT3V0cHV0Ei0KEnNpZ25lZF90cmFuc2FjdGlvbhgBIAEoDFIRc2lnbmVkVHJhbnNhY3Rpb24SEgoEaGFzaBgCIAEoDFIEaGFzaA==');

@@ -781,6 +781,76 @@ class Staking_Nominate extends $pb.GeneratedMessage {
   $core.List<$core.String> get nominators => $_getList(0);
 }
 
+class Staking_ChillAndUnbond extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'Staking.ChillAndUnbond',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.Polkadot.Proto'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'value',
+        $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  Staking_ChillAndUnbond._() : super();
+  factory Staking_ChillAndUnbond({
+    $core.List<$core.int>? value,
+  }) {
+    final _result = create();
+    if (value != null) {
+      _result.value = value;
+    }
+    return _result;
+  }
+  factory Staking_ChillAndUnbond.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Staking_ChillAndUnbond.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  Staking_ChillAndUnbond clone() =>
+      Staking_ChillAndUnbond()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Staking_ChillAndUnbond copyWith(
+          void Function(Staking_ChillAndUnbond) updates) =>
+      super.copyWith((message) => updates(message as Staking_ChillAndUnbond))
+          as Staking_ChillAndUnbond; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Staking_ChillAndUnbond create() => Staking_ChillAndUnbond._();
+  Staking_ChillAndUnbond createEmptyInstance() => create();
+  static $pb.PbList<Staking_ChillAndUnbond> createRepeated() =>
+      $pb.PbList<Staking_ChillAndUnbond>();
+  @$core.pragma('dart2js:noInline')
+  static Staking_ChillAndUnbond getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Staking_ChillAndUnbond>(create);
+  static Staking_ChillAndUnbond? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get value => $_getN(0);
+  @$pb.TagNumber(1)
+  set value($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasValue() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValue() => clearField(1);
+}
+
 class Staking_Chill extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       const $core.bool.fromEnvironment('protobuf.omit_message_names')
@@ -831,6 +901,7 @@ enum Staking_MessageOneof {
   withdrawUnbonded,
   nominate,
   chill,
+  chillAndUnbond,
   notSet
 }
 
@@ -844,6 +915,7 @@ class Staking extends $pb.GeneratedMessage {
     5: Staking_MessageOneof.withdrawUnbonded,
     6: Staking_MessageOneof.nominate,
     7: Staking_MessageOneof.chill,
+    8: Staking_MessageOneof.chillAndUnbond,
     0: Staking_MessageOneof.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
@@ -855,7 +927,7 @@ class Staking extends $pb.GeneratedMessage {
               ? ''
               : 'TW.Polkadot.Proto'),
       createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7])
+    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8])
     ..aOM<Staking_Bond>(
         1,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
@@ -898,6 +970,12 @@ class Staking extends $pb.GeneratedMessage {
             ? ''
             : 'chill',
         subBuilder: Staking_Chill.create)
+    ..aOM<Staking_ChillAndUnbond>(
+        8,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'chillAndUnbond',
+        subBuilder: Staking_ChillAndUnbond.create)
     ..hasRequiredFields = false;
 
   Staking._() : super();
@@ -909,6 +987,7 @@ class Staking extends $pb.GeneratedMessage {
     Staking_WithdrawUnbonded? withdrawUnbonded,
     Staking_Nominate? nominate,
     Staking_Chill? chill,
+    Staking_ChillAndUnbond? chillAndUnbond,
   }) {
     final _result = create();
     if (bond != null) {
@@ -931,6 +1010,9 @@ class Staking extends $pb.GeneratedMessage {
     }
     if (chill != null) {
       _result.chill = chill;
+    }
+    if (chillAndUnbond != null) {
+      _result.chillAndUnbond = chillAndUnbond;
     }
     return _result;
   }
@@ -1061,6 +1143,20 @@ class Staking extends $pb.GeneratedMessage {
   void clearChill() => clearField(7);
   @$pb.TagNumber(7)
   Staking_Chill ensureChill() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  Staking_ChillAndUnbond get chillAndUnbond => $_getN(7);
+  @$pb.TagNumber(8)
+  set chillAndUnbond(Staking_ChillAndUnbond v) {
+    setField(8, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasChillAndUnbond() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearChillAndUnbond() => clearField(8);
+  @$pb.TagNumber(8)
+  Staking_ChillAndUnbond ensureChillAndUnbond() => $_ensure(7);
 }
 
 enum SigningInput_MessageOneof { balanceCall, stakingCall, notSet }

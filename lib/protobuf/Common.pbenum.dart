@@ -37,6 +37,26 @@ class SigningError extends $pb.ProtobufEnum {
       const $core.bool.fromEnvironment('protobuf.omit_enum_names')
           ? ''
           : 'Error_missing_private_key');
+  static const SigningError Error_invalid_private_key = SigningError._(
+      15,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_invalid_private_key');
+  static const SigningError Error_invalid_address = SigningError._(
+      16,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_invalid_address');
+  static const SigningError Error_invalid_utxo = SigningError._(
+      17,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_invalid_utxo');
+  static const SigningError Error_invalid_utxo_amount = SigningError._(
+      18,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_invalid_utxo_amount');
   static const SigningError Error_wrong_fee = SigningError._(
       6,
       const $core.bool.fromEnvironment('protobuf.omit_enum_names')
@@ -82,6 +102,32 @@ class SigningError extends $pb.ProtobufEnum {
       const $core.bool.fromEnvironment('protobuf.omit_enum_names')
           ? ''
           : 'Error_invalid_memo');
+  static const SigningError Error_input_parse = SigningError._(
+      19,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_input_parse');
+  static const SigningError Error_no_support_n2n = SigningError._(
+      20,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_no_support_n2n');
+  static const SigningError Error_signatures_count = SigningError._(
+      21,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_signatures_count');
+  static const SigningError Error_invalid_params = SigningError._(
+      22,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Error_invalid_params');
+  static const SigningError Error_invalid_requested_token_amount =
+      SigningError._(
+          23,
+          const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+              ? ''
+              : 'Error_invalid_requested_token_amount');
 
   static const $core.List<SigningError> values = <SigningError>[
     OK,
@@ -90,6 +136,10 @@ class SigningError extends $pb.ProtobufEnum {
     Error_low_balance,
     Error_zero_amount_requested,
     Error_missing_private_key,
+    Error_invalid_private_key,
+    Error_invalid_address,
+    Error_invalid_utxo,
+    Error_invalid_utxo_amount,
     Error_wrong_fee,
     Error_signing,
     Error_tx_too_big,
@@ -99,6 +149,11 @@ class SigningError extends $pb.ProtobufEnum {
     Error_script_output,
     Error_script_witness_program,
     Error_invalid_memo,
+    Error_input_parse,
+    Error_no_support_n2n,
+    Error_signatures_count,
+    Error_invalid_params,
+    Error_invalid_requested_token_amount,
   ];
 
   static final $core.Map<$core.int, SigningError> _byValue =
