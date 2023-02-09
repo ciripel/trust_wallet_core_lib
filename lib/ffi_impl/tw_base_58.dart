@@ -1,7 +1,11 @@
 part of trust_wallet_core_ffi;
 
+/// Base58 encode / decode functions
 abstract class TWBase58 {
   /// Encodes data as a Base58 string, including the checksum.
+  ///
+  /// \param data The data to encode.
+  /// \return the encoded Base58 string with checksum.
   static Pointer<Utf8> TWBase58Encode(
     Pointer<Void> data,
   ) {
@@ -16,6 +20,9 @@ abstract class TWBase58 {
       _TWBase58Encode_ptr.asFunction<_dart_TWBase58Encode>();
 
   /// Encodes data as a Base58 string, not including the checksum.
+  ///
+  /// \param data The data to encode.
+  /// \return then encoded Base58 string without checksum.
   static Pointer<Utf8> TWBase58EncodeNoCheck(
     Pointer<Void> data,
   ) {
@@ -30,7 +37,10 @@ abstract class TWBase58 {
   static late final _dart_TWBase58EncodeNoCheck _TWBase58EncodeNoCheck =
       _TWBase58EncodeNoCheck_ptr.asFunction<_dart_TWBase58EncodeNoCheck>();
 
-  /// Decodes a Base58 string checking the checksum.
+  /// Decodes a Base58 string, checking the checksum. Returns null if the string is not a valid Base58 string.
+  ///
+  /// \param string The Base58 string to decode.
+  /// \return the decoded data, empty if the string is not a valid Base58 string with checksum.
   static Pointer<Void> TWBase58Decode(
     Pointer<Utf8> string,
   ) {
@@ -44,7 +54,10 @@ abstract class TWBase58 {
   static late final _dart_TWBase58Decode _TWBase58Decode =
       _TWBase58Decode_ptr.asFunction<_dart_TWBase58Decode>();
 
-  /// Decodes a Base58 string with no checksum.
+  /// Decodes a Base58 string, w/o checking the checksum. Returns null if the string is not a valid Base58 string.
+  ///
+  /// \param string The Base58 string to decode.
+  /// \return the decoded data, empty if the string is not a valid Base58 string without checksum.
   static Pointer<Void> TWBase58DecodeNoCheck(
     Pointer<Utf8> string,
   ) {

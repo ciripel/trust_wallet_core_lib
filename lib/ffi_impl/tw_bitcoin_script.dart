@@ -1,7 +1,10 @@
 part of trust_wallet_core_ffi;
 
+/// Bitcoin script manipulating functions
 abstract class TWBitcoinScript {
   /// Creates an empty script.
+  ///
+  /// \return A pointer to the script
   static Pointer<Void> TWBitcoinScriptCreate() {
     return _TWBitcoinScriptCreate();
   }
@@ -13,6 +16,10 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptCreate_ptr.asFunction<_dart_TWBitcoinScriptCreate>();
 
   /// Creates a script from a raw data representation.
+  ///
+  /// \param data The data buffer
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the script
   static Pointer<Void> TWBitcoinScriptCreateWithData(
     Pointer<Void> data,
   ) {
@@ -28,6 +35,12 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptCreateWithData = _TWBitcoinScriptCreateWithData_ptr
           .asFunction<_dart_TWBitcoinScriptCreateWithData>();
 
+  /// Creates a script from a raw bytes and size.
+  ///
+  /// \param bytes The buffer
+  /// \param size The size of the buffer
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the script
   static Pointer<Void> TWBitcoinScriptCreateWithBytes(
     Pointer<Uint8> bytes,
     int size,
@@ -45,7 +58,11 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptCreateWithBytes = _TWBitcoinScriptCreateWithBytes_ptr
           .asFunction<_dart_TWBitcoinScriptCreateWithBytes>();
 
-  /// Creates a script by copying an existring script.
+  /// Creates a script by copying an existing script.
+  ///
+  /// \param script Non-null pointer to a script
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the script
   static Pointer<Void> TWBitcoinScriptCreateCopy(
     Pointer<Void> script,
   ) {
@@ -61,6 +78,9 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptCreateCopy_ptr.asFunction<
           _dart_TWBitcoinScriptCreateCopy>();
 
+  /// Delete/Deallocate a given script.
+  ///
+  /// \param script Non-null pointer to a script
   static void TWBitcoinScriptDelete(
     Pointer<Void> script,
   ) {
@@ -75,6 +95,10 @@ abstract class TWBitcoinScript {
   static late final _dart_TWBitcoinScriptDelete _TWBitcoinScriptDelete =
       _TWBitcoinScriptDelete_ptr.asFunction<_dart_TWBitcoinScriptDelete>();
 
+  /// Get size of a script
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return size of the script
   static int TWBitcoinScriptSize(
     Pointer<Void> script,
   ) {
@@ -88,6 +112,10 @@ abstract class TWBitcoinScript {
   static late final _dart_TWBitcoinScriptSize _TWBitcoinScriptSize =
       _TWBitcoinScriptSize_ptr.asFunction<_dart_TWBitcoinScriptSize>();
 
+  /// Get data of a script
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return data of the given script
   static Pointer<Void> TWBitcoinScriptData(
     Pointer<Void> script,
   ) {
@@ -101,6 +129,10 @@ abstract class TWBitcoinScript {
   static late final _dart_TWBitcoinScriptData _TWBitcoinScriptData =
       _TWBitcoinScriptData_ptr.asFunction<_dart_TWBitcoinScriptData>();
 
+  /// Return script hash of a script
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return script hash of the given script
   static Pointer<Void> TWBitcoinScriptScriptHash(
     Pointer<Void> script,
   ) {
@@ -117,6 +149,9 @@ abstract class TWBitcoinScript {
           _dart_TWBitcoinScriptScriptHash>();
 
   /// Determines whether this is a pay-to-script-hash (P2SH) script.
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return true if this is a pay-to-script-hash (P2SH) script, false otherwise
   static int TWBitcoinScriptIsPayToScriptHash(
     Pointer<Void> script,
   ) {
@@ -133,6 +168,9 @@ abstract class TWBitcoinScript {
           .asFunction<_dart_TWBitcoinScriptIsPayToScriptHash>();
 
   /// Determines whether this is a pay-to-witness-script-hash (P2WSH) script.
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return true if this is a pay-to-witness-script-hash (P2WSH) script, false otherwise
   static int TWBitcoinScriptIsPayToWitnessScriptHash(
     Pointer<Void> script,
   ) {
@@ -150,6 +188,9 @@ abstract class TWBitcoinScript {
           _dart_TWBitcoinScriptIsPayToWitnessScriptHash>();
 
   /// Determines whether this is a pay-to-witness-public-key-hash (P2WPKH) script.
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return true if this is a pay-to-witness-public-key-hash (P2WPKH) script, false otherwise
   static int TWBitcoinScriptIsPayToWitnessPublicKeyHash(
     Pointer<Void> script,
   ) {
@@ -166,7 +207,10 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptIsPayToWitnessPublicKeyHash_ptr.asFunction<
           _dart_TWBitcoinScriptIsPayToWitnessPublicKeyHash>();
 
-  /// Determines whether this is a witness programm script.
+  /// Determines whether this is a witness program script.
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return true if this is a witness program script, false otherwise
   static int TWBitcoinScriptIsWitnessProgram(
     Pointer<Void> script,
   ) {
@@ -182,6 +226,11 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptIsWitnessProgram = _TWBitcoinScriptIsWitnessProgram_ptr
           .asFunction<_dart_TWBitcoinScriptIsWitnessProgram>();
 
+  /// Determines whether 2 scripts have the same content
+  ///
+  /// \param lhs Non-null pointer to the first script
+  /// \param rhs Non-null pointer to the second script
+  /// \return true if both script have the same content
   static int TWBitcoinScriptEqual(
     Pointer<Void> lhs,
     Pointer<Void> rhs,
@@ -199,7 +248,8 @@ abstract class TWBitcoinScript {
 
   /// Matches the script to a pay-to-public-key (P2PK) script.
   ///
-  /// - Returns: the public key.
+  /// \param script Non-null pointer to a script
+  /// \return The public key.
   static Pointer<Void> TWBitcoinScriptMatchPayToPubkey(
     Pointer<Void> script,
   ) {
@@ -217,7 +267,8 @@ abstract class TWBitcoinScript {
 
   /// Matches the script to a pay-to-public-key-hash (P2PKH).
   ///
-  /// - Returns: the key hash.
+  /// \param script Non-null pointer to a script
+  /// \return the key hash.
   static Pointer<Void> TWBitcoinScriptMatchPayToPubkeyHash(
     Pointer<Void> script,
   ) {
@@ -236,7 +287,8 @@ abstract class TWBitcoinScript {
 
   /// Matches the script to a pay-to-script-hash (P2SH).
   ///
-  /// - Returns: the script hash.
+  /// \param script Non-null pointer to a script
+  /// \return the script hash.
   static Pointer<Void> TWBitcoinScriptMatchPayToScriptHash(
     Pointer<Void> script,
   ) {
@@ -255,7 +307,8 @@ abstract class TWBitcoinScript {
 
   /// Matches the script to a pay-to-witness-public-key-hash (P2WPKH).
   ///
-  /// - Returns: the key hash.
+  /// \param script Non-null pointer to a script
+  /// \return the key hash.
   static Pointer<Void> TWBitcoinScriptMatchPayToWitnessPublicKeyHash(
     Pointer<Void> script,
   ) {
@@ -274,7 +327,8 @@ abstract class TWBitcoinScript {
 
   /// Matches the script to a pay-to-witness-script-hash (P2WSH).
   ///
-  /// - Returns: the script hash, a SHA256 of the witness script.
+  /// \param script Non-null pointer to a script
+  /// \return the script hash, a SHA256 of the witness script..
   static Pointer<Void> TWBitcoinScriptMatchPayToWitnessScriptHash(
     Pointer<Void> script,
   ) {
@@ -292,6 +346,9 @@ abstract class TWBitcoinScript {
           _dart_TWBitcoinScriptMatchPayToWitnessScriptHash>();
 
   /// Encodes the script.
+  ///
+  /// \param script Non-null pointer to a script
+  /// \return The encoded script
   static Pointer<Void> TWBitcoinScriptEncode(
     Pointer<Void> script,
   ) {
@@ -307,6 +364,10 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptEncode_ptr.asFunction<_dart_TWBitcoinScriptEncode>();
 
   /// Builds a standard 'pay to public key' script.
+  ///
+  /// \param pubkey Non-null pointer to a pubkey
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
   static Pointer<Void> TWBitcoinScriptBuildPayToPublicKey(
     Pointer<Void> hash,
   ) {
@@ -324,6 +385,10 @@ abstract class TWBitcoinScript {
           _dart_TWBitcoinScriptBuildPayToPublicKey>();
 
   /// Builds a standard 'pay to public key hash' script.
+  ///
+  /// \param hash Non-null pointer to a PublicKey hash
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
   static Pointer<Void> TWBitcoinScriptBuildPayToPublicKeyHash(
     Pointer<Void> hash,
   ) {
@@ -341,6 +406,10 @@ abstract class TWBitcoinScript {
           _dart_TWBitcoinScriptBuildPayToPublicKeyHash>();
 
   /// Builds a standard 'pay to script hash' script.
+  ///
+  /// \param scriptHash Non-null pointer to a script hash
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
   static Pointer<Void> TWBitcoinScriptBuildPayToScriptHash(
     Pointer<Void> scriptHash,
   ) {
@@ -357,7 +426,11 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptBuildPayToScriptHash_ptr.asFunction<
           _dart_TWBitcoinScriptBuildPayToScriptHash>();
 
-  /// Builds a pay-to-witness-public-key-hash (P2WPKH) script.
+  /// Builds a pay-to-witness-public-key-hash (P2WPKH) script..
+  ///
+  /// \param hash Non-null pointer to a witness public key hash
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
   static Pointer<Void> TWBitcoinScriptBuildPayToWitnessPubkeyHash(
     Pointer<Void> hash,
   ) {
@@ -375,6 +448,10 @@ abstract class TWBitcoinScript {
           _dart_TWBitcoinScriptBuildPayToWitnessPubkeyHash>();
 
   /// Builds a pay-to-witness-script-hash (P2WSH) script.
+  ///
+  /// \param scriptHash Non-null pointer to a script hash
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
   static Pointer<Void> TWBitcoinScriptBuildPayToWitnessScriptHash(
     Pointer<Void> scriptHash,
   ) {
@@ -391,7 +468,12 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptBuildPayToWitnessScriptHash_ptr.asFunction<
           _dart_TWBitcoinScriptBuildPayToWitnessScriptHash>();
 
-  /// Builds a appropriate lock script for the given address.
+  /// Builds a appropriate lock script for the given address..
+  ///
+  /// \param address Non-null pointer to an address
+  /// \param coin coin type
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
   static Pointer<Void> TWBitcoinScriptLockScriptForAddress(
     Pointer<Utf8> address,
     int coin,
@@ -410,6 +492,10 @@ abstract class TWBitcoinScript {
       _TWBitcoinScriptLockScriptForAddress_ptr.asFunction<
           _dart_TWBitcoinScriptLockScriptForAddress>();
 
+  /// Return the default HashType for the given coin, such as TWBitcoinSigHashTypeAll.
+  ///
+  /// \param coinType coin type
+  /// \return default HashType for the given coin
   static int TWBitcoinScriptHashTypeForCoin(
     int coinType,
   ) {

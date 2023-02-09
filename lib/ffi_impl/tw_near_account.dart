@@ -1,8 +1,12 @@
 part of trust_wallet_core_ffi;
 
-/// trust wallet core
+/// Represents a NEAR Account name
 abstract class TWNEARAccount {
-  /// Represents a NEAR Account name
+  /// Create a NEAR Account
+  ///
+  /// \param string Account name
+  /// \note Account should be deleted by calling \TWNEARAccountDelete
+  /// \return Pointer to a nullable NEAR Account.
   static Pointer<Void> TWNEARAccountCreateWithString(
     Pointer<Utf8> string,
   ) {
@@ -18,6 +22,9 @@ abstract class TWNEARAccount {
       _TWNEARAccountCreateWithString = _TWNEARAccountCreateWithString_ptr
           .asFunction<_dart_TWNEARAccountCreateWithString>();
 
+  /// Delete the given Near Account
+  ///
+  /// \param account Pointer to a non-null NEAR Account
   void TWNEARAccountDelete(
     Pointer<Void> account,
   ) {
@@ -32,6 +39,9 @@ abstract class TWNEARAccount {
       _TWNEARAccountDelete_ptr.asFunction<_dart_TWNEARAccountDelete>();
 
   /// Returns the user friendly string representation.
+  ///
+  /// \param account Pointer to a non-null NEAR Account
+  /// \return Non-null string account description
   Pointer<Utf8> TWNEARAccountDescription(
     Pointer<Void> account,
   ) {

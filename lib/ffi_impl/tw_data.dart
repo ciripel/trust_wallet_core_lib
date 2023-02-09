@@ -1,8 +1,15 @@
 part of trust_wallet_core_ffi;
 
-/// trust wallet core
+/// Defines a resizable block of data.
+///
+/// The implementantion of these methods should be language-specific to minimize translation overhead. For instance it
+/// should be a `jbyteArray` for Java and an `NSData` for Swift.
 class TWData {
   /// Creates a block of data from a byte array.
+  ///
+  /// \param bytes Non-null raw bytes buffer
+  /// \param size size of the buffer
+  /// \return Non-null filled block of data.
   static Pointer<Void> TWDataCreateWithBytes(
     Pointer<Uint8> bytes,
     int size,
@@ -20,6 +27,9 @@ class TWData {
       _TWDataCreateWithBytes_ptr.asFunction<_dart_TWDataCreateWithBytes>();
 
   /// Creates an uninitialized block of data with the provided size.
+  ///
+  /// \param size size for the block of data
+  /// \return Non-null uninitialized block of data with the provided size
   Pointer<Void> TWDataCreateWithSize(
     int size,
   ) {
@@ -34,6 +44,9 @@ class TWData {
       _TWDataCreateWithSize_ptr.asFunction<_dart_TWDataCreateWithSize>();
 
   /// Creates a block of data by copying another block of data.
+  ///
+  /// \param data buffer that need to be copied
+  /// \return Non-null filled block of data.
   static Pointer<Void> TWDataCreateWithData(
     Pointer<Void> data,
   ) {
@@ -48,6 +61,9 @@ class TWData {
       _TWDataCreateWithData_ptr.asFunction<_dart_TWDataCreateWithData>();
 
   /// Creates a block of data from a hexadecimal string.  Odd length is invalid (intended grouping to bytes is not obvious).
+  ///
+  /// \param hex input hex string
+  /// \return Non-null filled block of data
   Pointer<Void> TWDataCreateWithHexString(
     Pointer<Utf8> hex,
   ) {
@@ -64,6 +80,9 @@ class TWData {
           _dart_TWDataCreateWithHexString>();
 
   /// Returns the size in bytes.
+  ///
+  /// \param data A non-null valid block of data
+  /// \return the size of the given block of data
   static int TWDataSize(
     Pointer<Void> data,
   ) {
@@ -78,6 +97,9 @@ class TWData {
       _TWDataSize_ptr.asFunction<_dart_TWDataSize>();
 
   /// Returns the raw pointer to the contents of data.
+  ///
+  /// \param data A non-null valid block of data
+  /// \return the raw pointer to the contents of data
   static Pointer<Uint8> TWDataBytes(
     Pointer<Void> data,
   ) {
@@ -92,6 +114,10 @@ class TWData {
       _TWDataBytes_ptr.asFunction<_dart_TWDataBytes>();
 
   /// Returns the byte at the provided index.
+  ///
+  /// \param data A non-null valid block of data
+  /// \param index index of the byte that we want to fetch - index need to be < TWDataSize(data)
+  /// \return the byte at the provided index
   int TWDataGet(
     Pointer<Void> data,
     int index,
@@ -108,6 +134,10 @@ class TWData {
       _TWDataGet_ptr.asFunction<_dart_TWDataGet>();
 
   /// Sets the byte at the provided index.
+  ///
+  /// \param data A non-null valid block of data
+  /// \param index index of the byte that we want to set - index need to be < TWDataSize(data)
+  /// \param byte Given byte to be written in data
   void TWDataSet(
     Pointer<Void> data,
     int index,
@@ -126,6 +156,11 @@ class TWData {
       _TWDataSet_ptr.asFunction<_dart_TWDataSet>();
 
   /// Copies a range of bytes into the provided buffer.
+  ///
+  /// \param data A non-null valid block of data
+  /// \param start starting index of the range - index need to be < TWDataSize(data)
+  /// \param size size of the range we want to copy - size need to be < TWDataSize(data) - start
+  /// \param output The output buffer where we want to copy the data.
   void TWDataCopyBytes(
     Pointer<Void> data,
     int start,
@@ -146,6 +181,11 @@ class TWData {
       _TWDataCopyBytes_ptr.asFunction<_dart_TWDataCopyBytes>();
 
   /// Replaces a range of bytes with the contents of the provided buffer.
+  ///
+  /// \param data A non-null valid block of data
+  /// \param start starting index of the range - index need to be < TWDataSize(data)
+  /// \param size size of the range we want to replace - size need to be < TWDataSize(data) - start
+  /// \param bytes The buffer that will replace the range of data
   void TWDataReplaceBytes(
     Pointer<Void> data,
     int start,
@@ -166,6 +206,10 @@ class TWData {
       _TWDataReplaceBytes_ptr.asFunction<_dart_TWDataReplaceBytes>();
 
   /// Appends data from a byte array.
+  ///
+  /// \param data A non-null valid block of data
+  /// \param bytes Non-null byte array
+  /// \param size The size of the byte array
   void TWDataAppendBytes(
     Pointer<Void> data,
     Pointer<Uint8> bytes,
@@ -184,6 +228,9 @@ class TWData {
       _TWDataAppendBytes_ptr.asFunction<_dart_TWDataAppendBytes>();
 
   /// Appends a single byte.
+  ///
+  /// \param data A non-null valid block of data
+  /// \param byte A single byte
   void TWDataAppendByte(
     Pointer<Void> data,
     int byte,
@@ -200,6 +247,9 @@ class TWData {
       _TWDataAppendByte_ptr.asFunction<_dart_TWDataAppendByte>();
 
   /// Appends a block of data.
+  ///
+  /// \param data A non-null valid block of data
+  /// \param append A non-null valid block of data
   void TWDataAppendData(
     Pointer<Void> data,
     Pointer<Void> append,
@@ -215,7 +265,9 @@ class TWData {
   late final _dart_TWDataAppendData _TWDataAppendData =
       _TWDataAppendData_ptr.asFunction<_dart_TWDataAppendData>();
 
-  /// Revereses the bytes.
+  /// Reverse the bytes.
+  ///
+  /// \param data A non-null valid block of data
   void TWDataReverse(
     Pointer<Void> data,
   ) {
@@ -230,6 +282,8 @@ class TWData {
       _TWDataReverse_ptr.asFunction<_dart_TWDataReverse>();
 
   /// Sets all bytes to the given value.
+  ///
+  /// \param data A non-null valid block of data
   void TWDataReset(
     Pointer<Void> data,
   ) {
@@ -244,6 +298,8 @@ class TWData {
       _TWDataReset_ptr.asFunction<_dart_TWDataReset>();
 
   /// Deletes a block of data created with a `TWDataCreate*` method.
+  ///
+  /// \param data A non-null valid block of data
   static void TWDataDelete(
     Pointer<Void> data,
   ) {
@@ -258,6 +314,10 @@ class TWData {
       _TWDataDelete_ptr.asFunction<_dart_TWDataDelete>();
 
   /// Determines whether two data blocks are equal.
+  ///
+  /// \param lhs left non null block of data to be compared
+  /// \param rhs right non null block of data to be compared
+  /// \return true if both block of data are equal, false otherwise
   int TWDataEqual(
     Pointer<Void> lhs,
     Pointer<Void> rhs,

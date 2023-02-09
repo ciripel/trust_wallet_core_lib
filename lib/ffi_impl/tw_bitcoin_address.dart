@@ -1,7 +1,12 @@
 part of trust_wallet_core_ffi;
 
+/// Represents a legacy Bitcoin address in C++.
 abstract class TWBitcoinAddress {
   /// Compares two addresses for equality.
+  ///
+  /// \param lhs The first address to compare.
+  /// \param rhs The second address to compare.
+  /// \return bool indicating the addresses are equal.
   static int TWBitcoinAddressEqual(
     Pointer<Void> lhs,
     Pointer<Void> rhs,
@@ -19,6 +24,9 @@ abstract class TWBitcoinAddress {
       _TWBitcoinAddressEqual_ptr.asFunction<_dart_TWBitcoinAddressEqual>();
 
   /// Determines if the data is a valid Bitcoin address.
+  ///
+  /// \param data data to validate.
+  /// \return bool indicating if the address data is valid.
   static int TWBitcoinAddressIsValid(
     Pointer<Void> data,
   ) {
@@ -34,6 +42,9 @@ abstract class TWBitcoinAddress {
       _TWBitcoinAddressIsValid_ptr.asFunction<_dart_TWBitcoinAddressIsValid>();
 
   /// Determines if the string is a valid Bitcoin address.
+  ///
+  /// \param string string to validate.
+  /// \return bool indicating if the address string is valid.
   static int TWBitcoinAddressIsValidString(
     Pointer<Utf8> string,
   ) {
@@ -49,7 +60,10 @@ abstract class TWBitcoinAddress {
       _TWBitcoinAddressIsValidString = _TWBitcoinAddressIsValidString_ptr
           .asFunction<_dart_TWBitcoinAddressIsValidString>();
 
-  /// Initializes an address from a base58 sring representaion.
+  /// Initializes an address from a Base58 sring. Must be deleted with TWBitcoinAddressDelete after use.
+  ///
+  /// \param string Base58 string to initialize the address from.
+  /// \return TWBitcoinAddress pointer or nullptr if string is invalid.
   static Pointer<Void> TWBitcoinAddressCreateWithString(
     Pointer<Utf8> string,
   ) {
@@ -66,6 +80,9 @@ abstract class TWBitcoinAddress {
           .asFunction<_dart_TWBitcoinAddressCreateWithString>();
 
   /// Initializes an address from raw data.
+  ///
+  /// \param data Raw data to initialize the address from. Must be deleted with TWBitcoinAddressDelete after use.
+  /// \return TWBitcoinAddress pointer or nullptr if data is invalid.
   static Pointer<Void> TWBitcoinAddressCreateWithData(
     Pointer<Void> data,
   ) {
@@ -82,6 +99,10 @@ abstract class TWBitcoinAddress {
           .asFunction<_dart_TWBitcoinAddressCreateWithData>();
 
   /// Initializes an address from a public key and a prefix byte.
+  ///
+  /// \param publicKey Public key to initialize the address from.
+  /// \param prefix Prefix byte (p2pkh, p2sh, etc).
+  /// \return TWBitcoinAddress pointer or nullptr if public key is invalid.
   static Pointer<Void> TWBitcoinAddressCreateWithPublicKey(
     Pointer<Void> publicKey,
     int prefix,
@@ -100,6 +121,9 @@ abstract class TWBitcoinAddress {
       _TWBitcoinAddressCreateWithPublicKey_ptr.asFunction<
           _dart_TWBitcoinAddressCreateWithPublicKey>();
 
+  /// Deletes a legacy Bitcoin address.
+  ///
+  /// \param address Address to delete.
   static void TWBitcoinAddressDelete(
     Pointer<Void> address,
   ) {
@@ -114,7 +138,9 @@ abstract class TWBitcoinAddress {
   static late final _dart_TWBitcoinAddressDelete _TWBitcoinAddressDelete =
       _TWBitcoinAddressDelete_ptr.asFunction<_dart_TWBitcoinAddressDelete>();
 
-  /// Returns the address base58 string representation.
+  /// Returns the address in Base58 string representation.
+  ///
+  /// \param address Address to get the string representation of.
   static Pointer<Utf8> TWBitcoinAddressDescription(
     Pointer<Void> address,
   ) {
@@ -131,6 +157,8 @@ abstract class TWBitcoinAddress {
           .asFunction<_dart_TWBitcoinAddressDescription>();
 
   /// Returns the address prefix.
+  ///
+  /// \param address Address to get the prefix of.
   static int TWBitcoinAddressPrefix(
     Pointer<Void> address,
   ) {
@@ -145,7 +173,9 @@ abstract class TWBitcoinAddress {
   static late final _dart_TWBitcoinAddressPrefix _TWBitcoinAddressPrefix =
       _TWBitcoinAddressPrefix_ptr.asFunction<_dart_TWBitcoinAddressPrefix>();
 
-  /// Returns the keyhash data.
+  /// Returns the key hash data.
+  ///
+  /// \param address Address to get the keyhash data of.
   static Pointer<Void> TWBitcoinAddressKeyhash(
     Pointer<Void> address,
   ) {
