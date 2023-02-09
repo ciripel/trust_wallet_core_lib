@@ -3,7 +3,7 @@
 //  source: NEAR.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -120,12 +120,18 @@ class FunctionCallPermission extends $pb.GeneratedMessage {
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
             : 'receiverId')
+    ..pPS(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'methodNames')
     ..hasRequiredFields = false;
 
   FunctionCallPermission._() : super();
   factory FunctionCallPermission({
     $core.List<$core.int>? allowance,
     $core.String? receiverId,
+    $core.Iterable<$core.String>? methodNames,
   }) {
     final _result = create();
     if (allowance != null) {
@@ -133,6 +139,9 @@ class FunctionCallPermission extends $pb.GeneratedMessage {
     }
     if (receiverId != null) {
       _result.receiverId = receiverId;
+    }
+    if (methodNames != null) {
+      _result.methodNames.addAll(methodNames);
     }
     return _result;
   }
@@ -188,6 +197,9 @@ class FunctionCallPermission extends $pb.GeneratedMessage {
   $core.bool hasReceiverId() => $_has(1);
   @$pb.TagNumber(2)
   void clearReceiverId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get methodNames => $_getList(2);
 }
 
 class FullAccessPermission extends $pb.GeneratedMessage {
@@ -689,17 +701,18 @@ class Stake extends $pb.GeneratedMessage {
             ? ''
             : 'stake',
         $pb.PbFieldType.OY)
-    ..aOS(
+    ..aOM<PublicKey>(
         2,
         const $core.bool.fromEnvironment('protobuf.omit_field_names')
             ? ''
-            : 'publicKey')
+            : 'publicKey',
+        subBuilder: PublicKey.create)
     ..hasRequiredFields = false;
 
   Stake._() : super();
   factory Stake({
     $core.List<$core.int>? stake,
-    $core.String? publicKey,
+    PublicKey? publicKey,
   }) {
     final _result = create();
     if (stake != null) {
@@ -749,16 +762,18 @@ class Stake extends $pb.GeneratedMessage {
   void clearStake() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get publicKey => $_getSZ(1);
+  PublicKey get publicKey => $_getN(1);
   @$pb.TagNumber(2)
-  set publicKey($core.String v) {
-    $_setString(1, v);
+  set publicKey(PublicKey v) {
+    setField(2, v);
   }
 
   @$pb.TagNumber(2)
   $core.bool hasPublicKey() => $_has(1);
   @$pb.TagNumber(2)
   void clearPublicKey() => clearField(2);
+  @$pb.TagNumber(2)
+  PublicKey ensurePublicKey() => $_ensure(1);
 }
 
 class AddKey extends $pb.GeneratedMessage {

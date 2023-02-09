@@ -3,7 +3,7 @@
 //  source: Cardano.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -678,6 +678,387 @@ class Transfer extends $pb.GeneratedMessage {
   void clearForceFee() => clearField(6);
 }
 
+class RegisterStakingKey extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'RegisterStakingKey',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.Cardano.Proto'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'stakingAddress')
+    ..a<$fixnum.Int64>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'depositAmount',
+        $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  RegisterStakingKey._() : super();
+  factory RegisterStakingKey({
+    $core.String? stakingAddress,
+    $fixnum.Int64? depositAmount,
+  }) {
+    final _result = create();
+    if (stakingAddress != null) {
+      _result.stakingAddress = stakingAddress;
+    }
+    if (depositAmount != null) {
+      _result.depositAmount = depositAmount;
+    }
+    return _result;
+  }
+  factory RegisterStakingKey.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory RegisterStakingKey.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  RegisterStakingKey clone() => RegisterStakingKey()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  RegisterStakingKey copyWith(void Function(RegisterStakingKey) updates) =>
+      super.copyWith((message) => updates(message as RegisterStakingKey))
+          as RegisterStakingKey; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RegisterStakingKey create() => RegisterStakingKey._();
+  RegisterStakingKey createEmptyInstance() => create();
+  static $pb.PbList<RegisterStakingKey> createRepeated() =>
+      $pb.PbList<RegisterStakingKey>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterStakingKey getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterStakingKey>(create);
+  static RegisterStakingKey? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get stakingAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set stakingAddress($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasStakingAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStakingAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get depositAmount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set depositAmount($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasDepositAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDepositAmount() => clearField(2);
+}
+
+class DeregisterStakingKey extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'DeregisterStakingKey',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.Cardano.Proto'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'stakingAddress')
+    ..a<$fixnum.Int64>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'undepositAmount',
+        $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  DeregisterStakingKey._() : super();
+  factory DeregisterStakingKey({
+    $core.String? stakingAddress,
+    $fixnum.Int64? undepositAmount,
+  }) {
+    final _result = create();
+    if (stakingAddress != null) {
+      _result.stakingAddress = stakingAddress;
+    }
+    if (undepositAmount != null) {
+      _result.undepositAmount = undepositAmount;
+    }
+    return _result;
+  }
+  factory DeregisterStakingKey.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory DeregisterStakingKey.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  DeregisterStakingKey clone() =>
+      DeregisterStakingKey()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  DeregisterStakingKey copyWith(void Function(DeregisterStakingKey) updates) =>
+      super.copyWith((message) => updates(message as DeregisterStakingKey))
+          as DeregisterStakingKey; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static DeregisterStakingKey create() => DeregisterStakingKey._();
+  DeregisterStakingKey createEmptyInstance() => create();
+  static $pb.PbList<DeregisterStakingKey> createRepeated() =>
+      $pb.PbList<DeregisterStakingKey>();
+  @$core.pragma('dart2js:noInline')
+  static DeregisterStakingKey getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeregisterStakingKey>(create);
+  static DeregisterStakingKey? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get stakingAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set stakingAddress($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasStakingAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStakingAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get undepositAmount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set undepositAmount($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasUndepositAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUndepositAmount() => clearField(2);
+}
+
+class Delegate extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'Delegate',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.Cardano.Proto'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'stakingAddress')
+    ..a<$core.List<$core.int>>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'poolId',
+        $pb.PbFieldType.OY)
+    ..a<$fixnum.Int64>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'depositAmount',
+        $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  Delegate._() : super();
+  factory Delegate({
+    $core.String? stakingAddress,
+    $core.List<$core.int>? poolId,
+    $fixnum.Int64? depositAmount,
+  }) {
+    final _result = create();
+    if (stakingAddress != null) {
+      _result.stakingAddress = stakingAddress;
+    }
+    if (poolId != null) {
+      _result.poolId = poolId;
+    }
+    if (depositAmount != null) {
+      _result.depositAmount = depositAmount;
+    }
+    return _result;
+  }
+  factory Delegate.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Delegate.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  Delegate clone() => Delegate()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Delegate copyWith(void Function(Delegate) updates) =>
+      super.copyWith((message) => updates(message as Delegate))
+          as Delegate; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Delegate create() => Delegate._();
+  Delegate createEmptyInstance() => create();
+  static $pb.PbList<Delegate> createRepeated() => $pb.PbList<Delegate>();
+  @$core.pragma('dart2js:noInline')
+  static Delegate getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Delegate>(create);
+  static Delegate? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get stakingAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set stakingAddress($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasStakingAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStakingAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get poolId => $_getN(1);
+  @$pb.TagNumber(2)
+  set poolId($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasPoolId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPoolId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get depositAmount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set depositAmount($fixnum.Int64 v) {
+    $_setInt64(2, v);
+  }
+
+  @$pb.TagNumber(3)
+  $core.bool hasDepositAmount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDepositAmount() => clearField(3);
+}
+
+class Withdraw extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'Withdraw',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.Cardano.Proto'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'stakingAddress')
+    ..a<$fixnum.Int64>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'withdrawAmount',
+        $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  Withdraw._() : super();
+  factory Withdraw({
+    $core.String? stakingAddress,
+    $fixnum.Int64? withdrawAmount,
+  }) {
+    final _result = create();
+    if (stakingAddress != null) {
+      _result.stakingAddress = stakingAddress;
+    }
+    if (withdrawAmount != null) {
+      _result.withdrawAmount = withdrawAmount;
+    }
+    return _result;
+  }
+  factory Withdraw.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Withdraw.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  Withdraw clone() => Withdraw()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Withdraw copyWith(void Function(Withdraw) updates) =>
+      super.copyWith((message) => updates(message as Withdraw))
+          as Withdraw; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Withdraw create() => Withdraw._();
+  Withdraw createEmptyInstance() => create();
+  static $pb.PbList<Withdraw> createRepeated() => $pb.PbList<Withdraw>();
+  @$core.pragma('dart2js:noInline')
+  static Withdraw getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Withdraw>(create);
+  static Withdraw? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get stakingAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set stakingAddress($core.String v) {
+    $_setString(0, v);
+  }
+
+  @$pb.TagNumber(1)
+  $core.bool hasStakingAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStakingAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get withdrawAmount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set withdrawAmount($fixnum.Int64 v) {
+    $_setInt64(1, v);
+  }
+
+  @$pb.TagNumber(2)
+  $core.bool hasWithdrawAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWithdrawAmount() => clearField(2);
+}
+
 class TransactionPlan extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       const $core.bool.fromEnvironment('protobuf.omit_message_names')
@@ -753,6 +1134,20 @@ class TransactionPlan extends $pb.GeneratedMessage {
         defaultOrMaker: $0.SigningError.OK,
         valueOf: $0.SigningError.valueOf,
         enumValues: $0.SigningError.values)
+    ..a<$fixnum.Int64>(
+        10,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'deposit',
+        $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(
+        11,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'undeposit',
+        $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
   TransactionPlan._() : super();
@@ -766,6 +1161,8 @@ class TransactionPlan extends $pb.GeneratedMessage {
     $core.Iterable<TokenAmount>? changeTokens,
     $core.Iterable<TxInput>? utxos,
     $0.SigningError? error,
+    $fixnum.Int64? deposit,
+    $fixnum.Int64? undeposit,
   }) {
     final _result = create();
     if (availableAmount != null) {
@@ -794,6 +1191,12 @@ class TransactionPlan extends $pb.GeneratedMessage {
     }
     if (error != null) {
       _result.error = error;
+    }
+    if (deposit != null) {
+      _result.deposit = deposit;
+    }
+    if (undeposit != null) {
+      _result.undeposit = undeposit;
     }
     return _result;
   }
@@ -895,6 +1298,30 @@ class TransactionPlan extends $pb.GeneratedMessage {
   $core.bool hasError() => $_has(8);
   @$pb.TagNumber(9)
   void clearError() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get deposit => $_getI64(9);
+  @$pb.TagNumber(10)
+  set deposit($fixnum.Int64 v) {
+    $_setInt64(9, v);
+  }
+
+  @$pb.TagNumber(10)
+  $core.bool hasDeposit() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDeposit() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get undeposit => $_getI64(10);
+  @$pb.TagNumber(11)
+  set undeposit($fixnum.Int64 v) {
+    $_setInt64(10, v);
+  }
+
+  @$pb.TagNumber(11)
+  $core.bool hasUndeposit() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUndeposit() => clearField(11);
 }
 
 class SigningInput extends $pb.GeneratedMessage {
@@ -939,6 +1366,30 @@ class SigningInput extends $pb.GeneratedMessage {
             ? ''
             : 'plan',
         subBuilder: TransactionPlan.create)
+    ..aOM<RegisterStakingKey>(
+        6,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'registerStakingKey',
+        subBuilder: RegisterStakingKey.create)
+    ..aOM<Delegate>(
+        7,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'delegate',
+        subBuilder: Delegate.create)
+    ..aOM<Withdraw>(
+        8,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'withdraw',
+        subBuilder: Withdraw.create)
+    ..aOM<DeregisterStakingKey>(
+        9,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'deregisterStakingKey',
+        subBuilder: DeregisterStakingKey.create)
     ..hasRequiredFields = false;
 
   SigningInput._() : super();
@@ -948,6 +1399,10 @@ class SigningInput extends $pb.GeneratedMessage {
     Transfer? transferMessage,
     $fixnum.Int64? ttl,
     TransactionPlan? plan,
+    RegisterStakingKey? registerStakingKey,
+    Delegate? delegate,
+    Withdraw? withdraw,
+    DeregisterStakingKey? deregisterStakingKey,
   }) {
     final _result = create();
     if (utxos != null) {
@@ -964,6 +1419,18 @@ class SigningInput extends $pb.GeneratedMessage {
     }
     if (plan != null) {
       _result.plan = plan;
+    }
+    if (registerStakingKey != null) {
+      _result.registerStakingKey = registerStakingKey;
+    }
+    if (delegate != null) {
+      _result.delegate = delegate;
+    }
+    if (withdraw != null) {
+      _result.withdraw = withdraw;
+    }
+    if (deregisterStakingKey != null) {
+      _result.deregisterStakingKey = deregisterStakingKey;
     }
     return _result;
   }
@@ -1039,6 +1506,62 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearPlan() => clearField(5);
   @$pb.TagNumber(5)
   TransactionPlan ensurePlan() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  RegisterStakingKey get registerStakingKey => $_getN(5);
+  @$pb.TagNumber(6)
+  set registerStakingKey(RegisterStakingKey v) {
+    setField(6, v);
+  }
+
+  @$pb.TagNumber(6)
+  $core.bool hasRegisterStakingKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRegisterStakingKey() => clearField(6);
+  @$pb.TagNumber(6)
+  RegisterStakingKey ensureRegisterStakingKey() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  Delegate get delegate => $_getN(6);
+  @$pb.TagNumber(7)
+  set delegate(Delegate v) {
+    setField(7, v);
+  }
+
+  @$pb.TagNumber(7)
+  $core.bool hasDelegate() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDelegate() => clearField(7);
+  @$pb.TagNumber(7)
+  Delegate ensureDelegate() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  Withdraw get withdraw => $_getN(7);
+  @$pb.TagNumber(8)
+  set withdraw(Withdraw v) {
+    setField(8, v);
+  }
+
+  @$pb.TagNumber(8)
+  $core.bool hasWithdraw() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWithdraw() => clearField(8);
+  @$pb.TagNumber(8)
+  Withdraw ensureWithdraw() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  DeregisterStakingKey get deregisterStakingKey => $_getN(8);
+  @$pb.TagNumber(9)
+  set deregisterStakingKey(DeregisterStakingKey v) {
+    setField(9, v);
+  }
+
+  @$pb.TagNumber(9)
+  $core.bool hasDeregisterStakingKey() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDeregisterStakingKey() => clearField(9);
+  @$pb.TagNumber(9)
+  DeregisterStakingKey ensureDeregisterStakingKey() => $_ensure(8);
 }
 
 class SigningOutput extends $pb.GeneratedMessage {

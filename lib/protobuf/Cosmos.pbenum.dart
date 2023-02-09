@@ -3,7 +3,7 @@
 //  source: Cosmos.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 // ignore_for_file: UNDEFINED_SHOWN_NAME
 import 'dart:core' as $core;
@@ -61,4 +61,44 @@ class SigningMode extends $pb.ProtobufEnum {
   static SigningMode? valueOf($core.int value) => _byValue[value];
 
   const SigningMode._($core.int v, $core.String n) : super(v, n);
+}
+
+class Message_AuthorizationType extends $pb.ProtobufEnum {
+  static const Message_AuthorizationType UNSPECIFIED =
+      Message_AuthorizationType._(
+          0,
+          const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+              ? ''
+              : 'UNSPECIFIED');
+  static const Message_AuthorizationType DELEGATE = Message_AuthorizationType._(
+      1,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'DELEGATE');
+  static const Message_AuthorizationType UNDELEGATE =
+      Message_AuthorizationType._(
+          2,
+          const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+              ? ''
+              : 'UNDELEGATE');
+  static const Message_AuthorizationType REDELEGATE =
+      Message_AuthorizationType._(
+          3,
+          const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+              ? ''
+              : 'REDELEGATE');
+
+  static const $core.List<Message_AuthorizationType> values =
+      <Message_AuthorizationType>[
+    UNSPECIFIED,
+    DELEGATE,
+    UNDELEGATE,
+    REDELEGATE,
+  ];
+
+  static final $core.Map<$core.int, Message_AuthorizationType> _byValue =
+      $pb.ProtobufEnum.initByValue(values);
+  static Message_AuthorizationType? valueOf($core.int value) => _byValue[value];
+
+  const Message_AuthorizationType._($core.int v, $core.String n) : super(v, n);
 }

@@ -3,7 +3,7 @@
 //  source: NEAR.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
@@ -27,13 +27,14 @@ const FunctionCallPermission$json = const {
   '2': const [
     const {'1': 'allowance', '3': 1, '4': 1, '5': 12, '10': 'allowance'},
     const {'1': 'receiver_id', '3': 2, '4': 1, '5': 9, '10': 'receiverId'},
+    const {'1': 'method_names', '3': 3, '4': 3, '5': 9, '10': 'methodNames'},
   ],
 };
 
 /// Descriptor for `FunctionCallPermission`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List functionCallPermissionDescriptor =
     $convert.base64Decode(
-        'ChZGdW5jdGlvbkNhbGxQZXJtaXNzaW9uEhwKCWFsbG93YW5jZRgBIAEoDFIJYWxsb3dhbmNlEh8KC3JlY2VpdmVyX2lkGAIgASgJUgpyZWNlaXZlcklk');
+        'ChZGdW5jdGlvbkNhbGxQZXJtaXNzaW9uEhwKCWFsbG93YW5jZRgBIAEoDFIJYWxsb3dhbmNlEh8KC3JlY2VpdmVyX2lkGAIgASgJUgpyZWNlaXZlcklkEiEKDG1ldGhvZF9uYW1lcxgDIAMoCVILbWV0aG9kTmFtZXM=');
 @$core.Deprecated('Use fullAccessPermissionDescriptor instead')
 const FullAccessPermission$json = const {
   '1': 'FullAccessPermission',
@@ -123,13 +124,20 @@ const Stake$json = const {
   '1': 'Stake',
   '2': const [
     const {'1': 'stake', '3': 1, '4': 1, '5': 12, '10': 'stake'},
-    const {'1': 'public_key', '3': 2, '4': 1, '5': 9, '10': 'publicKey'},
+    const {
+      '1': 'public_key',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.TW.NEAR.Proto.PublicKey',
+      '10': 'publicKey'
+    },
   ],
 };
 
 /// Descriptor for `Stake`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List stakeDescriptor = $convert.base64Decode(
-    'CgVTdGFrZRIUCgVzdGFrZRgBIAEoDFIFc3Rha2USHQoKcHVibGljX2tleRgCIAEoCVIJcHVibGljS2V5');
+    'CgVTdGFrZRIUCgVzdGFrZRgBIAEoDFIFc3Rha2USNwoKcHVibGljX2tleRgCIAEoCzIYLlRXLk5FQVIuUHJvdG8uUHVibGljS2V5UglwdWJsaWNLZXk=');
 @$core.Deprecated('Use addKeyDescriptor instead')
 const AddKey$json = const {
   '1': 'AddKey',
