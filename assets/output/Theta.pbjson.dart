@@ -8,6 +8,7 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+
 @$core.Deprecated('Use signingInputDescriptor instead')
 const SigningInput$json = const {
   '1': 'SigningInput',
@@ -23,7 +24,8 @@ const SigningInput$json = const {
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSGQoIY2hhaW5faWQYASABKAlSB2NoYWluSWQSHQoKdG9fYWRkcmVzcxgCIAEoCVIJdG9BZGRyZXNzEiEKDHRoZXRhX2Ftb3VudBgDIAEoDFILdGhldGFBbW91bnQSIQoMdGZ1ZWxfYW1vdW50GAQgASgMUgt0ZnVlbEFtb3VudBIaCghzZXF1ZW5jZRgFIAEoBFIIc2VxdWVuY2USEAoDZmVlGAYgASgMUgNmZWUSHwoLcHJpdmF0ZV9rZXkYByABKAxSCnByaXZhdGVLZXk=');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode(
+    'CgxTaWduaW5nSW5wdXQSGQoIY2hhaW5faWQYASABKAlSB2NoYWluSWQSHQoKdG9fYWRkcmVzcxgCIAEoCVIJdG9BZGRyZXNzEiEKDHRoZXRhX2Ftb3VudBgDIAEoDFILdGhldGFBbW91bnQSIQoMdGZ1ZWxfYW1vdW50GAQgASgMUgt0ZnVlbEFtb3VudBIaCghzZXF1ZW5jZRgFIAEoBFIIc2VxdWVuY2USEAoDZmVlGAYgASgMUgNmZWUSHwoLcHJpdmF0ZV9rZXkYByABKAxSCnByaXZhdGVLZXk=');
 @$core.Deprecated('Use signingOutputDescriptor instead')
 const SigningOutput$json = const {
   '1': 'SigningOutput',
@@ -34,4 +36,5 @@ const SigningOutput$json = const {
 };
 
 /// Descriptor for `SigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode('Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAxSB2VuY29kZWQSHAoJc2lnbmF0dXJlGAIgASgMUglzaWduYXR1cmU=');
+final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode(
+    'Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAxSB2VuY29kZWQSHAoJc2lnbmF0dXJlGAIgASgMUglzaWduYXR1cmU=');

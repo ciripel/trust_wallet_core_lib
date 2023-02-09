@@ -10,17 +10,25 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class MessageBehavior extends $pb.ProtobufEnum {
-  static const MessageBehavior SimpleTransfer = MessageBehavior._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SimpleTransfer');
-  static const MessageBehavior SendAllBalance = MessageBehavior._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SendAllBalance');
+  static const MessageBehavior SimpleTransfer = MessageBehavior._(
+      0,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'SimpleTransfer');
+  static const MessageBehavior SendAllBalance = MessageBehavior._(
+      1,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'SendAllBalance');
 
-  static const $core.List<MessageBehavior> values = <MessageBehavior> [
+  static const $core.List<MessageBehavior> values = <MessageBehavior>[
     SimpleTransfer,
     SendAllBalance,
   ];
 
-  static final $core.Map<$core.int, MessageBehavior> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static final $core.Map<$core.int, MessageBehavior> _byValue =
+      $pb.ProtobufEnum.initByValue(values);
   static MessageBehavior? valueOf($core.int value) => _byValue[value];
 
   const MessageBehavior._($core.int v, $core.String n) : super(v, n);
 }
-

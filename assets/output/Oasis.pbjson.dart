@@ -8,6 +8,7 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+
 @$core.Deprecated('Use transferMessageDescriptor instead')
 const TransferMessage$json = const {
   '1': 'TransferMessage',
@@ -22,13 +23,22 @@ const TransferMessage$json = const {
 };
 
 /// Descriptor for `TransferMessage`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List transferMessageDescriptor = $convert.base64Decode('Cg9UcmFuc2Zlck1lc3NhZ2USDgoCdG8YASABKAlSAnRvEhsKCWdhc19wcmljZRgCIAEoBFIIZ2FzUHJpY2USHQoKZ2FzX2Ftb3VudBgDIAEoCVIJZ2FzQW1vdW50EhYKBmFtb3VudBgEIAEoCVIGYW1vdW50EhQKBW5vbmNlGAUgASgEUgVub25jZRIYCgdjb250ZXh0GAYgASgJUgdjb250ZXh0');
+final $typed_data.Uint8List transferMessageDescriptor = $convert.base64Decode(
+    'Cg9UcmFuc2Zlck1lc3NhZ2USDgoCdG8YASABKAlSAnRvEhsKCWdhc19wcmljZRgCIAEoBFIIZ2FzUHJpY2USHQoKZ2FzX2Ftb3VudBgDIAEoCVIJZ2FzQW1vdW50EhYKBmFtb3VudBgEIAEoCVIGYW1vdW50EhQKBW5vbmNlGAUgASgEUgVub25jZRIYCgdjb250ZXh0GAYgASgJUgdjb250ZXh0');
 @$core.Deprecated('Use signingInputDescriptor instead')
 const SigningInput$json = const {
   '1': 'SigningInput',
   '2': const [
     const {'1': 'private_key', '3': 1, '4': 1, '5': 12, '10': 'privateKey'},
-    const {'1': 'transfer', '3': 2, '4': 1, '5': 11, '6': '.TW.Oasis.Proto.TransferMessage', '9': 0, '10': 'transfer'},
+    const {
+      '1': 'transfer',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.TW.Oasis.Proto.TransferMessage',
+      '9': 0,
+      '10': 'transfer'
+    },
   ],
   '8': const [
     const {'1': 'message'},
@@ -36,7 +46,8 @@ const SigningInput$json = const {
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSHwoLcHJpdmF0ZV9rZXkYASABKAxSCnByaXZhdGVLZXkSPQoIdHJhbnNmZXIYAiABKAsyHy5UVy5PYXNpcy5Qcm90by5UcmFuc2Zlck1lc3NhZ2VIAFIIdHJhbnNmZXJCCQoHbWVzc2FnZQ==');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode(
+    'CgxTaWduaW5nSW5wdXQSHwoLcHJpdmF0ZV9rZXkYASABKAxSCnByaXZhdGVLZXkSPQoIdHJhbnNmZXIYAiABKAsyHy5UVy5PYXNpcy5Qcm90by5UcmFuc2Zlck1lc3NhZ2VIAFIIdHJhbnNmZXJCCQoHbWVzc2FnZQ==');
 @$core.Deprecated('Use signingOutputDescriptor instead')
 const SigningOutput$json = const {
   '1': 'SigningOutput',
@@ -46,4 +57,5 @@ const SigningOutput$json = const {
 };
 
 /// Descriptor for `SigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode('Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAxSB2VuY29kZWQ=');
+final $typed_data.Uint8List signingOutputDescriptor = $convert
+    .base64Decode('Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAxSB2VuY29kZWQ=');

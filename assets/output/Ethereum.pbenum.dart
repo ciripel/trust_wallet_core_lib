@@ -10,17 +10,25 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class TransactionMode extends $pb.ProtobufEnum {
-  static const TransactionMode Legacy = TransactionMode._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'Legacy');
-  static const TransactionMode Enveloped = TransactionMode._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'Enveloped');
+  static const TransactionMode Legacy = TransactionMode._(
+      0,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Legacy');
+  static const TransactionMode Enveloped = TransactionMode._(
+      1,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Enveloped');
 
-  static const $core.List<TransactionMode> values = <TransactionMode> [
+  static const $core.List<TransactionMode> values = <TransactionMode>[
     Legacy,
     Enveloped,
   ];
 
-  static final $core.Map<$core.int, TransactionMode> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static final $core.Map<$core.int, TransactionMode> _byValue =
+      $pb.ProtobufEnum.initByValue(values);
   static TransactionMode? valueOf($core.int value) => _byValue[value];
 
   const TransactionMode._($core.int v, $core.String n) : super(v, n);
 }
-

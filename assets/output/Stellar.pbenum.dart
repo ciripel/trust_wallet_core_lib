@@ -10,15 +10,19 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class ClaimPredicate extends $pb.ProtobufEnum {
-  static const ClaimPredicate Predicate_unconditional = ClaimPredicate._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'Predicate_unconditional');
+  static const ClaimPredicate Predicate_unconditional = ClaimPredicate._(
+      0,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'Predicate_unconditional');
 
-  static const $core.List<ClaimPredicate> values = <ClaimPredicate> [
+  static const $core.List<ClaimPredicate> values = <ClaimPredicate>[
     Predicate_unconditional,
   ];
 
-  static final $core.Map<$core.int, ClaimPredicate> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static final $core.Map<$core.int, ClaimPredicate> _byValue =
+      $pb.ProtobufEnum.initByValue(values);
   static ClaimPredicate? valueOf($core.int value) => _byValue[value];
 
   const ClaimPredicate._($core.int v, $core.String n) : super(v, n);
 }
-

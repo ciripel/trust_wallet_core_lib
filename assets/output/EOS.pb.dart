@@ -16,12 +16,32 @@ import 'Common.pbenum.dart' as $0;
 export 'EOS.pbenum.dart';
 
 class Asset extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Asset', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.EOS.Proto'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'decimals', $pb.PbFieldType.OU3)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'Asset',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.EOS.Proto'),
+      createEmptyInstance: create)
+    ..aInt64(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'amount')
+    ..a<$core.int>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'decimals',
+        $pb.PbFieldType.OU3)
+    ..aOS(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'symbol')
+    ..hasRequiredFields = false;
 
   Asset._() : super();
   factory Asset({
@@ -41,31 +61,39 @@ class Asset extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory Asset.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Asset.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory Asset.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory Asset.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   Asset clone() => Asset()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Asset copyWith(void Function(Asset) updates) => super.copyWith((message) => updates(message as Asset)) as Asset; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  Asset copyWith(void Function(Asset) updates) =>
+      super.copyWith((message) => updates(message as Asset))
+          as Asset; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Asset create() => Asset._();
   Asset createEmptyInstance() => create();
   static $pb.PbList<Asset> createRepeated() => $pb.PbList<Asset>();
   @$core.pragma('dart2js:noInline')
-  static Asset getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Asset>(create);
+  static Asset getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Asset>(create);
   static Asset? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get amount => $_getI64(0);
   @$pb.TagNumber(1)
-  set amount($fixnum.Int64 v) { $_setInt64(0, v); }
+  set amount($fixnum.Int64 v) {
+    $_setInt64(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasAmount() => $_has(0);
   @$pb.TagNumber(1)
@@ -74,7 +102,10 @@ class Asset extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.int get decimals => $_getIZ(1);
   @$pb.TagNumber(2)
-  set decimals($core.int v) { $_setUnsignedInt32(1, v); }
+  set decimals($core.int v) {
+    $_setUnsignedInt32(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasDecimals() => $_has(1);
   @$pb.TagNumber(2)
@@ -83,7 +114,10 @@ class Asset extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get symbol => $_getSZ(2);
   @$pb.TagNumber(3)
-  set symbol($core.String v) { $_setString(2, v); }
+  set symbol($core.String v) {
+    $_setString(2, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasSymbol() => $_has(2);
   @$pb.TagNumber(3)
@@ -91,19 +125,75 @@ class Asset extends $pb.GeneratedMessage {
 }
 
 class SigningInput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.EOS.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'referenceBlockId', $pb.PbFieldType.OY)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'referenceBlockTime', $pb.PbFieldType.OSF3)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currency')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sender')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipient')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memo')
-    ..aOM<Asset>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'asset', subBuilder: Asset.create)
-    ..a<$core.List<$core.int>>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..e<KeyType>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKeyType', $pb.PbFieldType.OE, defaultOrMaker: KeyType.LEGACY, valueOf: KeyType.valueOf, enumValues: KeyType.values)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'SigningInput',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.EOS.Proto'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'chainId',
+        $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'referenceBlockId',
+        $pb.PbFieldType.OY)
+    ..a<$core.int>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'referenceBlockTime',
+        $pb.PbFieldType.OSF3)
+    ..aOS(
+        4,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'currency')
+    ..aOS(
+        5,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'sender')
+    ..aOS(
+        6,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'recipient')
+    ..aOS(
+        7,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'memo')
+    ..aOM<Asset>(
+        8,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'asset',
+        subBuilder: Asset.create)
+    ..a<$core.List<$core.int>>(
+        9,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'privateKey',
+        $pb.PbFieldType.OY)
+    ..e<KeyType>(
+        10,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'privateKeyType',
+        $pb.PbFieldType.OE,
+        defaultOrMaker: KeyType.LEGACY,
+        valueOf: KeyType.valueOf,
+        enumValues: KeyType.values)
+    ..hasRequiredFields = false;
 
   SigningInput._() : super();
   factory SigningInput({
@@ -151,31 +241,40 @@ class SigningInput extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory SigningInput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SigningInput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory SigningInput.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory SigningInput.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   SigningInput clone() => SigningInput()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  SigningInput copyWith(void Function(SigningInput) updates) =>
+      super.copyWith((message) => updates(message as SigningInput))
+          as SigningInput; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SigningInput create() => SigningInput._();
   SigningInput createEmptyInstance() => create();
-  static $pb.PbList<SigningInput> createRepeated() => $pb.PbList<SigningInput>();
+  static $pb.PbList<SigningInput> createRepeated() =>
+      $pb.PbList<SigningInput>();
   @$core.pragma('dart2js:noInline')
-  static SigningInput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningInput>(create);
+  static SigningInput getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SigningInput>(create);
   static SigningInput? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get chainId => $_getN(0);
   @$pb.TagNumber(1)
-  set chainId($core.List<$core.int> v) { $_setBytes(0, v); }
+  set chainId($core.List<$core.int> v) {
+    $_setBytes(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasChainId() => $_has(0);
   @$pb.TagNumber(1)
@@ -184,7 +283,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$core.int> get referenceBlockId => $_getN(1);
   @$pb.TagNumber(2)
-  set referenceBlockId($core.List<$core.int> v) { $_setBytes(1, v); }
+  set referenceBlockId($core.List<$core.int> v) {
+    $_setBytes(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasReferenceBlockId() => $_has(1);
   @$pb.TagNumber(2)
@@ -193,7 +295,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.int get referenceBlockTime => $_getIZ(2);
   @$pb.TagNumber(3)
-  set referenceBlockTime($core.int v) { $_setSignedInt32(2, v); }
+  set referenceBlockTime($core.int v) {
+    $_setSignedInt32(2, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasReferenceBlockTime() => $_has(2);
   @$pb.TagNumber(3)
@@ -202,7 +307,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get currency => $_getSZ(3);
   @$pb.TagNumber(4)
-  set currency($core.String v) { $_setString(3, v); }
+  set currency($core.String v) {
+    $_setString(3, v);
+  }
+
   @$pb.TagNumber(4)
   $core.bool hasCurrency() => $_has(3);
   @$pb.TagNumber(4)
@@ -211,7 +319,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get sender => $_getSZ(4);
   @$pb.TagNumber(5)
-  set sender($core.String v) { $_setString(4, v); }
+  set sender($core.String v) {
+    $_setString(4, v);
+  }
+
   @$pb.TagNumber(5)
   $core.bool hasSender() => $_has(4);
   @$pb.TagNumber(5)
@@ -220,7 +331,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get recipient => $_getSZ(5);
   @$pb.TagNumber(6)
-  set recipient($core.String v) { $_setString(5, v); }
+  set recipient($core.String v) {
+    $_setString(5, v);
+  }
+
   @$pb.TagNumber(6)
   $core.bool hasRecipient() => $_has(5);
   @$pb.TagNumber(6)
@@ -229,7 +343,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.String get memo => $_getSZ(6);
   @$pb.TagNumber(7)
-  set memo($core.String v) { $_setString(6, v); }
+  set memo($core.String v) {
+    $_setString(6, v);
+  }
+
   @$pb.TagNumber(7)
   $core.bool hasMemo() => $_has(6);
   @$pb.TagNumber(7)
@@ -238,7 +355,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   Asset get asset => $_getN(7);
   @$pb.TagNumber(8)
-  set asset(Asset v) { setField(8, v); }
+  set asset(Asset v) {
+    setField(8, v);
+  }
+
   @$pb.TagNumber(8)
   $core.bool hasAsset() => $_has(7);
   @$pb.TagNumber(8)
@@ -249,7 +369,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.List<$core.int> get privateKey => $_getN(8);
   @$pb.TagNumber(9)
-  set privateKey($core.List<$core.int> v) { $_setBytes(8, v); }
+  set privateKey($core.List<$core.int> v) {
+    $_setBytes(8, v);
+  }
+
   @$pb.TagNumber(9)
   $core.bool hasPrivateKey() => $_has(8);
   @$pb.TagNumber(9)
@@ -258,7 +381,10 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   KeyType get privateKeyType => $_getN(9);
   @$pb.TagNumber(10)
-  set privateKeyType(KeyType v) { setField(10, v); }
+  set privateKeyType(KeyType v) {
+    setField(10, v);
+  }
+
   @$pb.TagNumber(10)
   $core.bool hasPrivateKeyType() => $_has(9);
   @$pb.TagNumber(10)
@@ -266,11 +392,30 @@ class SigningInput extends $pb.GeneratedMessage {
 }
 
 class SigningOutput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.EOS.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'jsonEncoded')
-    ..e<$0.SigningError>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: $0.SigningError.OK, valueOf: $0.SigningError.valueOf, enumValues: $0.SigningError.values)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'SigningOutput',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'TW.EOS.Proto'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'jsonEncoded')
+    ..e<$0.SigningError>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'error',
+        $pb.PbFieldType.OE,
+        defaultOrMaker: $0.SigningError.OK,
+        valueOf: $0.SigningError.valueOf,
+        enumValues: $0.SigningError.values)
+    ..hasRequiredFields = false;
 
   SigningOutput._() : super();
   factory SigningOutput({
@@ -286,31 +431,40 @@ class SigningOutput extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory SigningOutput.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory SigningOutput.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   SigningOutput clone() => SigningOutput()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  SigningOutput copyWith(void Function(SigningOutput) updates) =>
+      super.copyWith((message) => updates(message as SigningOutput))
+          as SigningOutput; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SigningOutput create() => SigningOutput._();
   SigningOutput createEmptyInstance() => create();
-  static $pb.PbList<SigningOutput> createRepeated() => $pb.PbList<SigningOutput>();
+  static $pb.PbList<SigningOutput> createRepeated() =>
+      $pb.PbList<SigningOutput>();
   @$core.pragma('dart2js:noInline')
-  static SigningOutput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningOutput>(create);
+  static SigningOutput getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SigningOutput>(create);
   static SigningOutput? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get jsonEncoded => $_getSZ(0);
   @$pb.TagNumber(1)
-  set jsonEncoded($core.String v) { $_setString(0, v); }
+  set jsonEncoded($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasJsonEncoded() => $_has(0);
   @$pb.TagNumber(1)
@@ -319,10 +473,12 @@ class SigningOutput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $0.SigningError get error => $_getN(1);
   @$pb.TagNumber(2)
-  set error($0.SigningError v) { setField(2, v); }
+  set error($0.SigningError v) {
+    setField(2, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasError() => $_has(1);
   @$pb.TagNumber(2)
   void clearError() => clearField(2);
 }
-
