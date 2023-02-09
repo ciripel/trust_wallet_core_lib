@@ -33,8 +33,11 @@ dependencies:
   convert: ^3.0.1
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
+  ffigen: ^6.1.2
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
