@@ -1,8 +1,12 @@
 part of trust_wallet_core_ffi;
 
-/// trust wallet core
+/// Represents a Ripple X-address.
 abstract class TWRippleXAddress {
   /// Compares two addresses for equality.
+  ///
+  /// \param lhs left non-null pointer to a Ripple Address
+  /// \param rhs right non-null pointer to a Ripple Address
+  /// \return true if both address are equal, false otherwise
   static int TWRippleXAddressEqual(
     Pointer<Void> lhs,
     Pointer<Void> rhs,
@@ -20,6 +24,9 @@ abstract class TWRippleXAddress {
       _TWRippleXAddressEqual_ptr.asFunction<_dart_TWRippleXAddressEqual>();
 
   /// Determines if the string is a valid Ripple address.
+  ///
+  /// \param string Non-null pointer to a string that represent the Ripple Address to be checked
+  /// \return true if the given address is a valid Ripple address, false otherwise
   static int TWRippleXAddressIsValidString(
     Pointer<Utf8> string,
   ) {
@@ -35,7 +42,11 @@ abstract class TWRippleXAddress {
       _TWRippleXAddressIsValidString = _TWRippleXAddressIsValidString_ptr
           .asFunction<_dart_TWRippleXAddressIsValidString>();
 
-  /// Creates an address from a string representaion.
+  /// Creates an address from a string representation.
+  ///
+  /// \param string Non-null pointer to a string that should be a valid ripple address
+  /// \note Should be deleted with \TWRippleXAddressDelete
+  /// \return Null pointer if the given string is an invalid ripple address, pointer to a Ripple address otherwise
   static Pointer<Void> TWRippleXAddressCreateWithString(
     Pointer<Utf8> string,
   ) {
@@ -52,6 +63,11 @@ abstract class TWRippleXAddress {
           .asFunction<_dart_TWRippleXAddressCreateWithString>();
 
   /// Creates an address from a public key and destination tag.
+  ///
+  /// \param publicKey Non-null pointer to a public key
+  /// \param tag valid ripple destination tag (1-10)
+  /// \note Should be deleted with \TWRippleXAddressDelete
+  /// \return Non-null pointer to a Ripple Address
   static Pointer<Void> TWRippleXAddressCreateWithPublicKey(
     Pointer<Void> publicKey,
     int tag,
@@ -70,6 +86,9 @@ abstract class TWRippleXAddress {
       _TWRippleXAddressCreateWithPublicKey_ptr.asFunction<
           _dart_TWRippleXAddressCreateWithPublicKey>();
 
+  /// Delete the given ripple address
+  ///
+  /// \param address Non-null pointer to a Ripple Address
   static void TWRippleXAddressDelete(
     Pointer<Void> address,
   ) {
@@ -85,6 +104,9 @@ abstract class TWRippleXAddress {
       _TWRippleXAddressDelete_ptr.asFunction<_dart_TWRippleXAddressDelete>();
 
   /// Returns the address string representation.
+  ///
+  /// \param address Non-null pointer to a Ripple Address
+  /// \return Non-null pointer to the ripple address string representation
   static Pointer<Utf8> TWRippleXAddressDescription(
     Pointer<Void> address,
   ) {
@@ -101,6 +123,9 @@ abstract class TWRippleXAddress {
           .asFunction<_dart_TWRippleXAddressDescription>();
 
   /// Returns the destination tag.
+  ///
+  /// \param address Non-null pointer to a Ripple Address
+  /// \return The destination tag of the given Ripple Address (1-10)
   static int TWRippleXAddressTag(
     Pointer<Void> address,
   ) {

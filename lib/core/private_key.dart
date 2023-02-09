@@ -80,7 +80,7 @@ class PrivateKey {
 
   PublicKey getPublicKeyNistEd25519Extended() {
     final data =
-        TWPrivateKeyImpl.getPublicKeyNistEd25519Extended(_nativehandle);
+        TWPrivateKeyImpl.TWPrivateKeyGetPublicKeyEd25519Cardano(_nativehandle);
     return PublicKey._(data);
   }
 

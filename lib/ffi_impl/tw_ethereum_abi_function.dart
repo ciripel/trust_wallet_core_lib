@@ -1,8 +1,11 @@
 part of trust_wallet_core_ffi;
 
-/// trust wallet core
+/// Represents Ethereum ABI function
 abstract class TWEthereumAbiFunction {
   /// Creates a function object, with the given name and empty parameter list.  It must be deleted at the end.
+  ///
+  /// \param name function name
+  /// \return Non-null Ethereum abi function
   static Pointer<Void> TWEthereumAbiFunctionCreateWithString(
     Pointer<Utf8> name,
   ) {
@@ -20,6 +23,8 @@ abstract class TWEthereumAbiFunction {
           _dart_TWEthereumAbiFunctionCreateWithString>();
 
   /// Deletes a function object created with a 'TWEthereumAbiFunctionCreateWithString' method.
+  ///
+  /// \param fn Non-null Ethereum abi function
   static void TWEthereumAbiFunctionDelete(
     Pointer<Void> fn,
   ) {
@@ -36,6 +41,9 @@ abstract class TWEthereumAbiFunction {
           .asFunction<_dart_TWEthereumAbiFunctionDelete>();
 
   /// Return the function type signature, of the form "baz(int32,uint256)"
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \return function type signature as a Non-null string.
   static Pointer<Utf8> TWEthereumAbiFunctionGetType(
     Pointer<Void> fn,
   ) {
@@ -51,9 +59,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionGetType = _TWEthereumAbiFunctionGetType_ptr
           .asFunction<_dart_TWEthereumAbiFunctionGetType>();
 
-  /// Methods for adding parameters of the given type (input or output).
-  /// For output parameters (isOutput=true) a value has to be specified, although usually not needd.
-  /// Returns the index of the parameter (0-based).
+  /// Add a uint8 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamUInt8(
     Pointer<Void> fn,
     int val,
@@ -74,6 +85,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamUInt8_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamUInt8>();
 
+  /// Add a uint16 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamUInt16(
     Pointer<Void> fn,
     int val,
@@ -94,6 +111,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamUInt16_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamUInt16>();
 
+  /// Add a uint32 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamUInt32(
     Pointer<Void> fn,
     int val,
@@ -114,6 +137,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamUInt32_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamUInt32>();
 
+  /// Add a uint64 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamUInt64(
     Pointer<Void> fn,
     int val,
@@ -134,6 +163,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamUInt64_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamUInt64>();
 
+  /// Add a uint256 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamUInt256(
     Pointer<Void> fn,
     Pointer<Void> val,
@@ -154,6 +189,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamUInt256_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamUInt256>();
 
+  /// Add a uint(bits) type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamUIntN(
     Pointer<Void> fn,
     int bits,
@@ -176,6 +217,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamUIntN_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamUIntN>();
 
+  /// Add a int8 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamInt8(
     Pointer<Void> fn,
     int val,
@@ -196,6 +243,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamInt8_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamInt8>();
 
+  /// Add a int16 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamInt16(
     Pointer<Void> fn,
     int val,
@@ -216,6 +269,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamInt16_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamInt16>();
 
+  /// Add a int32 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamInt32(
     Pointer<Void> fn,
     int val,
@@ -236,6 +295,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamInt32_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamInt32>();
 
+  /// Add a int64 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamInt64(
     Pointer<Void> fn,
     int val,
@@ -256,6 +321,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamInt64_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamInt64>();
 
+  /// Add a int256 type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified (stored in a block of data)
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamInt256(
     Pointer<Void> fn,
     Pointer<Void> val,
@@ -276,6 +347,13 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamInt256_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamInt256>();
 
+  /// Add a int(bits) type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param bits Number of bits of the integer parameter
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamIntN(
     Pointer<Void> fn,
     int bits,
@@ -298,6 +376,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamIntN_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamIntN>();
 
+  /// Add a bool type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamBool(
     Pointer<Void> fn,
     int val,
@@ -318,6 +402,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamBool_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamBool>();
 
+  /// Add a string type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamString(
     Pointer<Void> fn,
     Pointer<Utf8> val,
@@ -338,6 +428,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamString_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamString>();
 
+  /// Add an address type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamAddress(
     Pointer<Void> fn,
     Pointer<Void> val,
@@ -358,6 +454,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamAddress_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamAddress>();
 
+  /// Add a bytes type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamBytes(
     Pointer<Void> fn,
     Pointer<Void> val,
@@ -378,6 +480,13 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamBytes_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamBytes>();
 
+  /// Add a bytes[N] type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param size fixed size of the bytes array parameter (val).
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamBytesFix(
     Pointer<Void> fn,
     int size,
@@ -400,6 +509,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddParamBytesFix_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddParamBytesFix>();
 
+  /// Add a type[] type parameter
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param val for output parameters, value has to be specified
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the index of the parameter (0-based).
   static int TWEthereumAbiFunctionAddParamArray(
     Pointer<Void> fn,
     int isOutput,
@@ -419,6 +534,13 @@ abstract class TWEthereumAbiFunction {
           _dart_TWEthereumAbiFunctionAddParamArray>();
 
   /// Methods for accessing the value of an output or input parameter, of different types.
+
+  /// Get a uint8 type parameter at the given index
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param idx index for the parameter (0-based).
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the value of the parameter.
   static int TWEthereumAbiFunctionGetParamUInt8(
     Pointer<Void> fn,
     int idx,
@@ -439,6 +561,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionGetParamUInt8_ptr.asFunction<
           _dart_TWEthereumAbiFunctionGetParamUInt8>();
 
+  /// Get a uint64 type parameter at the given index
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param idx index for the parameter (0-based).
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the value of the parameter.
   static int TWEthereumAbiFunctionGetParamUInt64(
     Pointer<Void> fn,
     int idx,
@@ -459,6 +587,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionGetParamUInt64_ptr.asFunction<
           _dart_TWEthereumAbiFunctionGetParamUInt64>();
 
+  /// Get a uint256 type parameter at the given index
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param idx index for the parameter (0-based).
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the value of the parameter stored in a block of data.
   static Pointer<Int32> TWEthereumAbiFunctionGetParamUInt256(
     Pointer<Void> fn,
     int idx,
@@ -479,6 +613,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionGetParamUInt256_ptr.asFunction<
           _dart_TWEthereumAbiFunctionGetParamUInt256>();
 
+  /// Get a bool type parameter at the given index
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param idx index for the parameter (0-based).
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the value of the parameter.
   static int TWEthereumAbiFunctionGetParamBool(
     Pointer<Void> fn,
     int idx,
@@ -499,6 +639,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionGetParamBool_ptr.asFunction<
           _dart_TWEthereumAbiFunctionGetParamBool>();
 
+  /// Get a string type parameter at the given index
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param idx index for the parameter (0-based).
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the value of the parameter.
   static Pointer<Utf8> TWEthereumAbiFunctionGetParamString(
     Pointer<Void> fn,
     int idx,
@@ -519,6 +665,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionGetParamString_ptr.asFunction<
           _dart_TWEthereumAbiFunctionGetParamString>();
 
+  /// Get an address type parameter at the given index
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param idx index for the parameter (0-based).
+  /// \param isOutput determines if the parameter is an input or output
+  /// \return the value of the parameter.
   static Pointer<Void> TWEthereumAbiFunctionGetParamAddress(
     Pointer<Void> fn,
     int idx,
@@ -541,6 +693,13 @@ abstract class TWEthereumAbiFunction {
 
   /// Methods for adding a parameter of the given type to a top-level input parameter array.  Returns the index of the parameter (0-based).
   /// Note that nested ParamArrays are not possible through this API, could be done by using index paths like "1/0"
+
+  /// Adding a uint8 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamUInt8(
     Pointer<Void> fn,
     int arrayIdx,
@@ -561,6 +720,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamUInt8_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamUInt8>();
 
+  /// Adding a uint16 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamUInt16(
     Pointer<Void> fn,
     int arrayIdx,
@@ -581,6 +746,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamUInt16_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamUInt16>();
 
+  /// Adding a uint32 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamUInt32(
     Pointer<Void> fn,
     int arrayIdx,
@@ -601,6 +772,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamUInt32_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamUInt32>();
 
+  /// Adding a uint64 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamUInt64(
     Pointer<Void> fn,
     int arrayIdx,
@@ -621,6 +798,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamUInt64_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamUInt64>();
 
+  /// Adding a uint256 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter stored in a block of data
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamUInt256(
     Pointer<Void> fn,
     int arrayIdx,
@@ -641,6 +824,13 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamUInt256_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamUInt256>();
 
+  /// Adding a uint[N] type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param bits Number of bits of the integer parameter
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter stored in a block of data
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamUIntN(
     Pointer<Void> fn,
     int arrayIdx,
@@ -663,6 +853,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamUIntN_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamUIntN>();
 
+  /// Adding a int8 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamInt8(
     Pointer<Void> fn,
     int arrayIdx,
@@ -683,6 +879,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamInt8_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamInt8>();
 
+  /// Adding a int16 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamInt16(
     Pointer<Void> fn,
     int arrayIdx,
@@ -703,6 +905,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamInt16_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamInt16>();
 
+  /// Adding a int32 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamInt32(
     Pointer<Void> fn,
     int arrayIdx,
@@ -723,6 +931,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamInt32_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamInt32>();
 
+  /// Adding a int64 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamInt64(
     Pointer<Void> fn,
     int arrayIdx,
@@ -743,6 +957,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamInt64_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamInt64>();
 
+  /// Adding a int256 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter stored in a block of data
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamInt256(
     Pointer<Void> fn,
     int arrayIdx,
@@ -763,6 +983,13 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamInt256_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamInt256>();
 
+  /// Adding a int[N] type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param bits Number of bits of the integer parameter
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter stored in a block of data
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamIntN(
     Pointer<Void> fn,
     int arrayIdx,
@@ -785,6 +1012,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamIntN_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamIntN>();
 
+  /// Adding a bool type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamBool(
     Pointer<Void> fn,
     int arrayIdx,
@@ -805,6 +1038,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamBool_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamBool>();
 
+  /// Adding a string type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamString(
     Pointer<Void> fn,
     int arrayIdx,
@@ -825,6 +1064,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamString_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamString>();
 
+  /// Adding an address type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamAddress(
     Pointer<Void> fn,
     int arrayIdx,
@@ -845,6 +1090,12 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamAddress_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamAddress>();
 
+  /// Adding a bytes type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamBytes(
     Pointer<Void> fn,
     int arrayIdx,
@@ -865,6 +1116,13 @@ abstract class TWEthereumAbiFunction {
       _TWEthereumAbiFunctionAddInArrayParamBytes_ptr.asFunction<
           _dart_TWEthereumAbiFunctionAddInArrayParamBytes>();
 
+  /// Adding a int64 type parameter of to the top-level input parameter array
+  ///
+  /// \param fn A Non-null eth abi function
+  /// \param arrayIdx array index for the abi function (0-based).
+  /// \param size fixed size of the bytes array parameter (val).
+  /// \param val the value of the parameter
+  /// \return the index of the added parameter (0-based).
   static int TWEthereumAbiFunctionAddInArrayParamBytesFix(
     Pointer<Void> fn,
     int arrayIdx,

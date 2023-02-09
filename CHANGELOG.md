@@ -1,3 +1,8 @@
+## 0.0.7+3.0.4
+* Update API - synced with 3.0.4
+* Add unit tests
+* Add iOS native builds
+* Add assets for proto generation
 ## 0.0.6+2.9.6
 * Update API - synced with 2.9.6
 ## 0.0.5+2.7.2

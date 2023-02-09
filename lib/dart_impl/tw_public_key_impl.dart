@@ -77,13 +77,13 @@ class TWPublicKeyImpl extends TWPublicKey {
     return result;
   }
 
-  static bool verifySchnorr(
+  static bool verifyZilliqaSchnorr(
       Pointer<Void> publicKey, Uint8List signature, Uint8List message) {
     final _signatureData = TWData.TWDataCreateWithBytes(
         signature.toPointerUint8(), signature.length);
     final _messageData =
         TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
-    final result = TWPublicKey.TWPublicKeyVerifySchnorr(
+    final result = TWPublicKey.TWPublicKeyVerifyZilliqaSchnorr(
             publicKey, _signatureData, _messageData) >=
         1;
     TWData.TWDataDelete(_signatureData);

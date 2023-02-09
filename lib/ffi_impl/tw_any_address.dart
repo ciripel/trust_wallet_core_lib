@@ -1,7 +1,12 @@
 part of trust_wallet_core_ffi;
 
+/// Represents an address in C++ for almost any blockchain.
 abstract class TWAnyAddress {
   /// Compares two addresses for equality.
+  ///
+  /// \param lhs The first address to compare.
+  /// \param rhs The second address to compare.
+  /// \return bool indicating the addresses are equal.
   static int TWAnyAddressEqual(
     Pointer<Void> lhs,
     Pointer<Void> rhs,
@@ -18,6 +23,10 @@ abstract class TWAnyAddress {
       _TWAnyAddressEqual_ptr.asFunction<_dart_TWAnyAddressEqual>();
 
   /// Determines if the string is a valid Any address.
+  ///
+  /// \param string address to validate.
+  /// \param coin coin type of the address.
+  /// \return bool indicating if the address is valid.
   static int TWAnyAddressIsValid(
     Pointer<Utf8> string,
     int coin,
@@ -33,7 +42,11 @@ abstract class TWAnyAddress {
   static late final _dart_TWAnyAddressIsValid _TWAnyAddressIsValid =
       _TWAnyAddressIsValid_ptr.asFunction<_dart_TWAnyAddressIsValid>();
 
-  /// Creates an address from a string representaion.
+  /// Creates an address from a string representation and a coin type. Must be deleted with TWAnyAddressDelete after use.
+  ///
+  /// \param string address to create.
+  /// \param coin coin type of the address.
+  /// \return TWAnyAddress pointer or nullptr if address and coin are invalid.
   static Pointer<Void> TWAnyAddressCreateWithString(
     Pointer<Utf8> string,
     int coin,
@@ -52,6 +65,10 @@ abstract class TWAnyAddress {
           .asFunction<_dart_TWAnyAddressCreateWithString>();
 
   /// Creates an address from a public key.
+  ///
+  /// \param publicKey derivates the address from the public key.
+  /// \param coin coin type of the address.
+  /// \return TWAnyAddress pointer or nullptr if public key is invalid.
   static Pointer<Void> TWAnyAddressCreateWithPublicKey(
     Pointer<Void> publicKey,
     int coin,
@@ -69,6 +86,9 @@ abstract class TWAnyAddress {
       _TWAnyAddressCreateWithPublicKey = _TWAnyAddressCreateWithPublicKey_ptr
           .asFunction<_dart_TWAnyAddressCreateWithPublicKey>();
 
+  /// Deletes an address.
+  ///
+  /// \param address address to delete.
   static void TWAnyAddressDelete(
     Pointer<Void> address,
   ) {
@@ -82,7 +102,9 @@ abstract class TWAnyAddress {
   static late final _dart_TWAnyAddressDelete _TWAnyAddressDelete =
       _TWAnyAddressDelete_ptr.asFunction<_dart_TWAnyAddressDelete>();
 
-  /// Returns the address string representation. eip55
+  /// Returns the address string representation.
+  ///
+  /// \param address address to get the string representation of.
   static Pointer<Utf8> TWAnyAddressDescription(
     Pointer<Void> address,
   ) {
@@ -98,6 +120,8 @@ abstract class TWAnyAddress {
       _TWAnyAddressDescription_ptr.asFunction<_dart_TWAnyAddressDescription>();
 
   /// Returns coin type of address.
+  ///
+  /// \param address address to get the coin type of.
   static int TWAnyAddressCoin(
     Pointer<Void> address,
   ) {
@@ -112,6 +136,8 @@ abstract class TWAnyAddress {
       _TWAnyAddressCoin_ptr.asFunction<_dart_TWAnyAddressCoin>();
 
   /// Returns underlaying data (public key or key hash)
+  ///
+  /// \param address address to get the data of.
   static Pointer<Void> TWAnyAddressData(
     Pointer<Void> address,
   ) {

@@ -58,6 +58,7 @@ class PublicKey {
   }
 
   bool verifySchnorr(Uint8List signature, Uint8List message) {
-    return TWPublicKeyImpl.verifySchnorr(_nativehandle, signature, message);
+    return TWPublicKeyImpl.verifyZilliqaSchnorr(
+        _nativehandle, signature, message);
   }
 }
