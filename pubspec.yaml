@@ -18,6 +18,7 @@ dev_dependencies:
     sdk: flutter
   flutter_test:
     sdk: flutter
+  ffigen: ^7.2.11
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -66,3 +67,12 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/custom-fonts/#from-packages
+ffigen:
+  name: TrustWalletCoreLib
+  description: Bindings to `gen/headers/**.h
+  output:
+    bindings: 'gen/ffigen_output/generated_bindings.dart'
+  headers:
+    entry-points:
+      - 'gen/headers/**.h'
+  compiler-opts: '-I/usr/lib/llvm-14/ -Wno-nullability-completeness'
